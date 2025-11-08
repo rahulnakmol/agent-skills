@@ -10,9 +10,71 @@ This repository is a **development environment for creating Claude Agent Skills*
 - Examples and development plans (`plans/`)
 - Guidelines for building effective skills
 
+## CRITICAL: Plan-First Development Workflow
+
+**⚠️ MANDATORY REQUIREMENT ⚠️**
+
+Every skill development MUST follow this workflow:
+
+1. **Create a plan FIRST** in the `plans/` folder
+2. **1:1 Relationship**: Each skill MUST have a corresponding plan file
+3. **Naming Convention**: `plans/{skill-name}-plan.md` for skill `{skill-name}/`
+4. **Reference the plan** throughout development
+
+### Example Mapping
+
+| Skill Directory | Plan File |
+|----------------|-----------|
+| `template-skill/` | `plans/template-skill-plan.md` |
+| `ms-enterprise-architect/` | `plans/ms-enterprise-architect-plan.md` |
+| `my-new-skill/` | `plans/my-new-skill-plan.md` |
+
+### Why Plans Are Required
+
+Plans provide:
+- **Structured task breakdown** - Clear steps to follow
+- **Git workflow guidance** - Commit strategy for each task
+- **Validation criteria** - Success metrics at each stage
+- **Progress tracking** - Easy to resume work
+- **Documentation** - Audit trail of development decisions
+
+**Before starting any skill development, AI assistants MUST:**
+1. Read the corresponding plan file in `plans/`
+2. If no plan exists, create one based on `plans/template-skill-plan.md`
+3. Follow tasks sequentially as defined in the plan
+4. Commit after each completed task
+
 ## Quick Reference: Creating a New Skill
 
 When asked to create a new Claude skill, follow these steps:
+
+### 0. Create or Reference the Plan (FIRST STEP)
+
+**Before doing anything else:**
+
+```bash
+# Check if plan exists
+ls plans/{skill-name}-plan.md
+
+# If plan doesn't exist, create it from template
+cp plans/template-skill-plan.md plans/{skill-name}-plan.md
+
+# Edit the plan with skill-specific details
+# Update objectives, tasks, structure, validation criteria
+
+# Commit the plan
+git add plans/{skill-name}-plan.md
+git commit -m "docs({skill-name}): Add skill generation plan"
+
+# NOW read and follow the plan for all subsequent steps
+```
+
+**For AI Assistants:**
+- ✅ ALWAYS read `plans/{skill-name}-plan.md` before starting
+- ✅ Follow the tasks in sequential order
+- ✅ Commit after each task as specified in plan
+- ❌ NEVER skip the plan - it's mandatory
+- ❌ NEVER start coding without a plan
 
 ### 1. Create the Skill Directory
 
@@ -73,21 +135,67 @@ The markdown body should include:
 
 ## Skill Development Workflow
 
-### Step 1: Understand the Request
+### Step 0: Create or Read the Plan (MANDATORY FIRST STEP)
+
+**Before any development work:**
+
+1. **Check for existing plan**
+   ```bash
+   ls plans/{skill-name}-plan.md
+   ```
+
+2. **If plan exists:** Read it completely and follow its tasks
+   ```bash
+   # Read the plan
+   cat plans/{skill-name}-plan.md
+
+   # Follow tasks sequentially as defined
+   ```
+
+3. **If plan doesn't exist:** Create it from template
+   ```bash
+   # Copy template plan
+   cp plans/template-skill-plan.md plans/{skill-name}-plan.md
+
+   # Customize the plan with skill-specific details
+   # Edit: objectives, tasks, structure, validation criteria
+
+   # Commit the plan
+   git add plans/{skill-name}-plan.md
+   git commit -m "docs({skill-name}): Add skill generation plan"
+   ```
+
+**Plan Template Structure:**
+- Project Overview (objectives, purpose, principles)
+- Repository Structure (directory layout)
+- Git Workflow (commit strategy)
+- Development Tasks (numbered, sequential, with dependencies)
+- Success Criteria (validation checklist)
+
+### Step 1: Understand the Request (As per Plan)
 - Clarify the skill's purpose and scope
 - Identify the target use case
 - Determine required tools and resources
+- **Update these in the plan file**
 
-### Step 2: Plan the Skill Structure
-- Decide if additional files are needed (scripts, templates, data files)
-- Plan the instruction flow
-- Identify edge cases and error scenarios
+### Step 2: Execute Plan Tasks Sequentially
+- Follow numbered tasks in `plans/{skill-name}-plan.md`
+- Complete tasks in order (respect dependencies)
+- Commit after each task completion
+- Update task status in plan as you progress
 
-### Step 3: Create the Skill
+### Step 3: Create the Skill Directory (Plan Task 1)
 ```bash
-# Create directory
+# Create directory (as specified in plan)
 mkdir my-new-skill
 
+# Commit after completing this task
+git add my-new-skill/
+git commit -m "feat(my-new-skill): Task 1 - Create directory structure"
+```
+
+### Step 4: Create SKILL.md File (Plan Task 2)
+```bash
 # Create SKILL.md
 cat > my-new-skill/SKILL.md << 'EOF'
 ---
@@ -99,9 +207,13 @@ description: Description of what this skill does and when to use it
 
 Your detailed instructions here...
 EOF
+
+# Commit after completing this task
+git add my-new-skill/SKILL.md
+git commit -m "feat(my-new-skill): Task 2 - Create SKILL.md with initial structure"
 ```
 
-### Step 4: Add Supporting Files (if needed)
+### Step 5: Add Supporting Files (Plan Task 3+, if needed)
 Skills can include additional files:
 - Scripts (Python, JavaScript, shell scripts)
 - Templates (for generating code/documents)
@@ -120,11 +232,36 @@ my-skill/
     └── reference.json
 ```
 
-### Step 5: Test and Validate
+**Commit after each addition:**
+```bash
+# After adding scripts
+git add my-new-skill/scripts/
+git commit -m "feat(my-new-skill): Task 3 - Add helper scripts"
+
+# After adding templates
+git add my-new-skill/templates/
+git commit -m "feat(my-new-skill): Task 4 - Add templates"
+
+# Follow the task numbering in your plan
+```
+
+### Step 6: Test and Validate (As per Plan Validation Tasks)
 - Verify SKILL.md has valid YAML frontmatter
 - Check that `name` matches directory name
 - Ensure description is clear and actionable
 - Test that instructions are complete and unambiguous
+- Run validation checklist from plan
+
+**Final validation commit:**
+```bash
+# After validation and any fixes
+git add my-new-skill/
+git commit -m "fix(my-new-skill): Task N - Validation fixes and final review"
+
+# Update plan status
+git add plans/my-new-skill-plan.md
+git commit -m "docs(my-new-skill): Mark plan as completed"
+```
 
 ## Common Skill Patterns
 
@@ -283,16 +420,31 @@ enterprise-skill/
 
 Before finalizing a skill, verify:
 
+**Plan Requirements:**
+- [ ] Plan file exists at `plans/{skill-name}-plan.md`
+- [ ] Plan has been followed throughout development
+- [ ] All tasks in plan are marked as completed
+- [ ] Plan status updated to "Completed"
+
+**Skill Structure:**
 - [ ] Directory name is in hyphen-case
 - [ ] SKILL.md exists and is valid
 - [ ] YAML frontmatter is properly formatted
 - [ ] `name` field matches directory name exactly
 - [ ] `description` is clear and actionable
+
+**Content Quality:**
 - [ ] Markdown instructions are complete
 - [ ] Examples are provided where helpful
 - [ ] Any additional files are properly referenced
 - [ ] Tool usage is documented
 - [ ] Error handling is addressed
+
+**Git Workflow:**
+- [ ] Each task has been committed separately
+- [ ] Commit messages follow plan conventions
+- [ ] All changes are committed and pushed
+- [ ] Plan file is up to date in repository
 
 ## Common Issues and Solutions
 
@@ -317,6 +469,25 @@ description: My description
 - Concrete examples
 - Expected inputs and outputs
 - Error handling guidelines
+
+### Issue: No Plan File or Plan Not Found
+**Solution:**
+- Every skill MUST have a corresponding plan in `plans/{skill-name}-plan.md`
+- Create from template:
+  ```bash
+  cp plans/template-skill-plan.md plans/{skill-name}-plan.md
+  # Edit with skill-specific details
+  git add plans/{skill-name}-plan.md
+  git commit -m "docs({skill-name}): Add skill generation plan"
+  ```
+- NEVER skip this step - plans are mandatory, not optional
+
+### Issue: Lost Track of Development Progress
+**Solution:**
+- Refer back to the plan file: `plans/{skill-name}-plan.md`
+- Check task status table
+- Review git commit history
+- Update plan with current status
 
 ## Development Commands
 
@@ -370,10 +541,18 @@ Skills can be used via Claude API:
 ## Examples and References
 
 **This Repository Contains:**
-- `agent_skills_spec.md` - Full specification
-- `template-skill/` - Minimal template
-- `plans/` - Development plans and examples
+- `agent_skills_spec.md` - Full specification for Agent Skills Spec 1.0
+- `template-skill/` - Minimal skill template with basic SKILL.md
+- `plans/` - Development plans (REQUIRED for each skill)
+  - `plans/template-skill-plan.md` - Template plan for simple skills
+  - `plans/ms-enterprise-architect-plan.md` - Example of complex skill plan
 - `README.md` - User-facing documentation
+
+**Plan Files (1:1 Relationship with Skills):**
+Every skill directory must have a corresponding plan:
+- `template-skill/` → `plans/template-skill-plan.md`
+- `ms-enterprise-architect/` → `plans/ms-enterprise-architect-plan.md`
+- `your-skill/` → `plans/your-skill-plan.md` (create from template)
 
 **External Resources:**
 - [Anthropic Skills Repository](https://github.com/anthropics/skills) - Official examples
@@ -405,13 +584,40 @@ This guide is based on Agent Skills Spec 1.0 (2025-10-16).
 
 When a user asks you to create a Claude skill:
 
-1. **Clarify requirements:** What should the skill do? When should it be used?
-2. **Choose a name:** Use hyphen-case, be descriptive
-3. **Create directory:** `mkdir skill-name`
-4. **Create SKILL.md:** Follow the template structure above
-5. **Write instructions:** Be clear, complete, and practical
-6. **Add resources:** Include scripts, templates, or data as needed
-7. **Validate:** Check structure, naming, and completeness
-8. **Test:** Verify the skill works as intended
+### STEP 0: Plan First (MANDATORY)
+1. **Read or create the plan:** Check if `plans/{skill-name}-plan.md` exists
+   - If exists: Read it completely before proceeding
+   - If not exists: Create it from `plans/template-skill-plan.md`
+2. **Commit the plan:** Always commit the plan before starting development
 
-**Remember:** The skill's effectiveness depends on the clarity and completeness of the instructions in SKILL.md. Write as if you're explaining to another AI exactly what to do and how to do it.
+### STEP 1: Clarify and Structure
+3. **Clarify requirements:** What should the skill do? When should it be used?
+4. **Choose a name:** Use hyphen-case, be descriptive
+5. **Update plan:** Customize tasks, structure, and validation criteria
+
+### STEP 2: Development (Follow Plan Tasks)
+6. **Create directory:** `mkdir skill-name` (as per plan Task 1)
+7. **Create SKILL.md:** Follow the template structure (as per plan Task 2)
+8. **Write instructions:** Be clear, complete, and practical (as per plan tasks)
+9. **Add resources:** Include scripts, templates, or data as needed (as per plan tasks)
+10. **Commit after each task:** Follow git workflow specified in plan
+
+### STEP 3: Validation and Completion
+11. **Validate:** Check structure, naming, and completeness (as per plan validation)
+12. **Test:** Verify the skill works as intended
+13. **Update plan status:** Mark tasks as completed
+
+**Critical Reminders:**
+- ⚠️ **NEVER skip the plan** - It's mandatory, not optional
+- ⚠️ **Read `plans/{skill-name}-plan.md` FIRST** before any coding
+- ⚠️ **Follow tasks sequentially** as defined in the plan
+- ⚠️ **Commit after each task** as specified in plan git workflow
+- ⚠️ **1:1 relationship** - One plan file per skill, always
+
+**Remember:** The skill's effectiveness depends on:
+1. Following the plan systematically
+2. Clarity and completeness of instructions in SKILL.md
+3. Proper git workflow and commits
+4. Validation at each stage
+
+Write as if you're explaining to another AI exactly what to do and how to do it.
