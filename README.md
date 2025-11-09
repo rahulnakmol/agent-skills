@@ -79,11 +79,23 @@ This repository includes Model Context Protocol (MCP) server configurations that
 
 ### Quick Setup
 
-1. Create a `.env` file in the project root with your API keys (see [MCP_SERVERS.md](MCP_SERVERS.md) for required variables and detailed instructions)
+1. Create a `.env` file in the project root with the required API keys:
+   ```bash
+   # Required
+   GITHUB_TOKEN=your_github_token
+   LINEAR_API_KEY=your_linear_api_key
+   FIGMA_API_KEY=your_figma_api_key
+   AZURE_TENANT_ID=your_azure_tenant_id
+   AZURE_CLIENT_ID=your_azure_client_id
+   AZURE_CLIENT_SECRET=your_azure_client_secret
+
+   # Optional
+   CONTEXT7_API_KEY=your_context7_api_key
+   PLAYWRIGHT_DEBUG=false
+   PLAYWRIGHT_HEADLESS=true
+   ```
 
 2. Claude Code will automatically load the MCP configurations from `.mcp.json`
-
-For comprehensive setup instructions, API key generation guides, usage examples, and troubleshooting, see **[MCP_SERVERS.md](MCP_SERVERS.md)**.
 
 ## Examples and Inspiration
 
