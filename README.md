@@ -79,14 +79,9 @@ This repository includes Model Context Protocol (MCP) server configurations that
 
 ### Quick Setup
 
-1. Copy the environment template:
-   ```bash
-   cp .env.example .env
-   ```
+1. Create a `.env` file in the project root with your API keys (see [MCP_SERVERS.md](MCP_SERVERS.md) for required variables and detailed instructions)
 
-2. Add your API keys to `.env` (see [MCP_SERVERS.md](MCP_SERVERS.md) for detailed instructions)
-
-3. Claude Code will automatically load the MCP configurations from `.mcp.json`
+2. Claude Code will automatically load the MCP configurations from `.mcp.json`
 
 For comprehensive setup instructions, API key generation guides, usage examples, and troubleshooting, see **[MCP_SERVERS.md](MCP_SERVERS.md)**.
 

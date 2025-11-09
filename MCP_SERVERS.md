@@ -35,21 +35,15 @@ Model Context Protocol (MCP) is an open protocol that enables AI assistants like
 
 ## Quick Start
 
-### 1. Copy Environment Template
+### 1. Create Environment File
 
-```bash
-cp .env.example .env
-```
+Create a `.env` file in the project root with your API keys and tokens. See [API Key Generation](#api-key-generation) and the environment variables section below for required values.
 
-### 2. Add Your API Keys
-
-Edit `.env` and add your API keys and tokens. See [API Key Generation](#api-key-generation) for detailed instructions.
-
-### 3. Start Using
+### 2. Start Using
 
 Claude Code will automatically load the `.mcp.json` configuration from this repository. MCP servers will be available in your Claude Code sessions.
 
-### 4. Verify Setup
+### 3. Verify Setup
 
 Ask Claude: "What MCP servers are available?" to verify the configuration.
 
@@ -186,13 +180,7 @@ cd /path/to/agent-skills
 
 #### 2. Create Environment File
 
-```bash
-cp .env.example .env
-```
-
-#### 3. Configure Environment Variables
-
-Edit `.env` with your preferred editor:
+Create a `.env` file with your preferred editor:
 
 ```bash
 # Use your preferred editor
@@ -203,13 +191,37 @@ vim .env
 code .env
 ```
 
-Add your API keys (see [API Key Generation](#api-key-generation) below).
+Add your API keys and environment variables (see [API Key Generation](#api-key-generation) below for details).
 
-#### 4. Verify Configuration
+**Required Environment Variables:**
+```bash
+# GitHub (Required)
+GITHUB_TOKEN=ghp_your_github_personal_access_token
+
+# Linear (Required)
+LINEAR_API_KEY=lin_api_your_linear_api_key_here
+
+# Figma (Required)
+FIGMA_API_KEY=your_figma_personal_access_token
+
+# Azure (Required)
+AZURE_TENANT_ID=your_azure_tenant_id
+AZURE_CLIENT_ID=your_azure_client_id
+AZURE_CLIENT_SECRET=your_azure_client_secret
+
+# Context7 (Optional)
+CONTEXT7_API_KEY=your_context7_api_key_here
+
+# Playwright (Optional - defaults provided)
+PLAYWRIGHT_DEBUG=false
+PLAYWRIGHT_HEADLESS=true
+```
+
+#### 3. Verify Configuration
 
 The `.mcp.json` file in the repository root is already configured. Claude Code will automatically detect and load it.
 
-#### 5. Restart Claude Code
+#### 4. Restart Claude Code
 
 If Claude Code is running, restart it to load the new MCP server configurations.
 
