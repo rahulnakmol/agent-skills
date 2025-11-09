@@ -80,15 +80,16 @@ echo -e "${YELLOW}→ Staging skill files...${NC}"
 
 # Copy skill to staging directory
 mkdir -p "$STAGING_DIR"
-rsync -a \
-    --exclude='.git' \
-    --exclude='.DS_Store' \
-    --exclude='*.skill' \
-    --exclude='node_modules' \
-    --exclude='tests/' \
-    --exclude='plans/' \
-    --exclude='.skillrc' \
-    "$SKILL_DIR/" "$STAGING_DIR/"
+cp -r "$SKILL_DIR"/* "$STAGING_DIR/" 2>/dev/null || true
+
+# Remove excluded items
+rm -rf "$STAGING_DIR/.git" \
+       "$STAGING_DIR/.DS_Store" \
+       "$STAGING_DIR"/*.skill \
+       "$STAGING_DIR/node_modules" \
+       "$STAGING_DIR/tests" \
+       "$STAGING_DIR/plans" \
+       "$STAGING_DIR/.skillrc" 2>/dev/null || true
 
 # Count files
 FILE_COUNT=$(find "$STAGING_DIR" -type f | wc -l | tr -d ' ')
@@ -111,9 +112,9 @@ fi
 echo ""
 echo -e "${YELLOW}→ Creating .skill package...${NC}"
 
-# Create tar.gz archive with .skill extension
+# Create ZIP archive with .skill extension
 cd "$TEMP_DIR"
-tar -czf "$OUTPUT_FILE" "$SKILL_NAME"
+zip -q -r "$OUTPUT_FILE" "$SKILL_NAME"
 
 # Cleanup
 rm -rf "$TEMP_DIR"
