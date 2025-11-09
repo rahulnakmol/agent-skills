@@ -1,3 +1,14 @@
+---
+category: template
+template_type: business-case
+loading_priority: 2
+tokens_estimate: 428
+dependencies: [phases/phase-vision]
+keywords: [business-case, roi-modeling, financial-analysis, cost-benefit-analysis, investment-justification, financial-model, sensitivity-analysis]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Business Case Templates
 
 ## Overview

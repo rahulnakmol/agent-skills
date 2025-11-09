@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: azure-waf
+pillar: performance-efficiency
+loading_priority: 2
+tokens_estimate: 3400
+dependencies: [azure-specifics]
+keywords: [performance, scalability, caching, load, CQRS, throughput, latency, optimization]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Performance Efficiency - Azure Well-Architected Framework
 
 ## Definition

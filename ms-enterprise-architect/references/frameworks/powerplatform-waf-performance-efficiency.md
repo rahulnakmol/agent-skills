@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: powerplatform-waf
+pillar: performance-efficiency
+loading_priority: 2
+tokens_estimate: 3000
+dependencies: [power-platform-specifics, quality-standards]
+keywords: [performance, Dataverse optimization, canvas app performance, delegation, Power BI refresh]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Performance Efficiency - Power Platform Well-Architected Framework
 
 ## Definition

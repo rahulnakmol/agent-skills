@@ -1,0 +1,117 @@
+skill:
+  name: ms-enterprise-architect
+  version: 2.0.0
+  last_updated: 2025-11-09
+  next_review: 2026-02-09
+
+classification:
+  type: enterprise-architecture
+  platform: microsoft-cloud-ecosystem
+  methodology: vision-validate-construct-deploy-evolve
+
+context_optimization:
+  strategy: hybrid-progressive-loading
+  layers: 4
+  budget_max_tokens: 30000
+  estimated_reduction: 85-95%
+  approach:
+    - hierarchical-progressive-loading
+    - context-budgeting
+    - append-only-loading
+
+structure:
+  core: SKILL.md
+  indexes: references/_index/
+  categories:
+    - frameworks
+    - phases
+    - technology
+    - scenarios
+    - templates
+
+metadata:
+  total_files: 42
+  total_size_mb: 2.02
+  total_words: 114000
+  total_lines: 28569
+  index_files: 5
+  index_size_lines: 550
+
+packaging:
+  script: ../../tools/package-skill.sh
+  exclude:
+    - .git
+    - .DS_Store
+    - "*.skill"
+    - tests/
+    - .skillrc
+
+changelog:
+  - version: 2.0.0
+    date: 2025-11-09
+    changes:
+      - Implemented hierarchical progressive loading (3 layers)
+      - Added context budgeting system (30k token max for references)
+      - Created index/quick reference layer (4 files, 550 lines)
+      - Added YAML frontmatter metadata to all 42 reference files
+      - Framework catalog for smart framework selection
+      - Phase summaries for methodology quick reference
+      - Template guide with inline common patterns
+      - Quick reference for top 10 request patterns
+      - 85-95% reduction in initial context usage
+      - Progressive conversation-based depth expansion
+      - Created packaging script for .skill file generation
+
+  - version: 1.0.0
+    date: 2025-11-08
+    changes:
+      - Initial release
+      - 42 reference files across 5 categories
+      - 5-phase methodology (Vision→Validate→Construct→Deploy→Evolve)
+      - Microsoft platform coverage (Azure, Power Platform, Dynamics, M365)
+      - 12 architectural frameworks (Azure WAF, PP WAF, DDD, Agent)
+      - Mermaid diagram-as-code templates
+      - Phase-specific templates and deliverable guides
+      - Scenario coverage (migrations, M&A, regulated industries, multi-geo)
+      - Quality standards and success metrics
+
+maintenance:
+  review_cycle: quarterly
+  update_triggers:
+    - Microsoft platform updates (Azure, Power Platform, M365, Dynamics)
+    - Well-Architected Framework revisions
+    - New architectural patterns and best practices
+    - Industry scenario evolution
+    - Microsoft announcements (Ignite, Build conferences)
+
+  update_process:
+    - Review Microsoft announcements
+    - Assess WAF changes
+    - Validate reference accuracy
+    - Update index files
+    - Test context budgets
+    - Version skill
+
+platforms:
+  compatible:
+    - Claude Chat (web)
+    - Claude Code
+
+  optimized_for:
+    - Long conversations (append-only loading)
+    - Complex multi-faceted queries
+    - Progressive depth expansion
+    - Token-efficient interactions
+
+metrics:
+  context_efficiency:
+    initial_load_tokens: 2000
+    simple_query_tokens: 5000
+    medium_query_tokens: 15000
+    complex_query_tokens: 30000
+
+  quality:
+    framework_coverage: 12
+    platform_coverage: 4
+    scenario_coverage: 4
+    template_types: 8

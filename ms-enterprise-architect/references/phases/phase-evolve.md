@@ -1,3 +1,14 @@
+---
+category: phase
+phase_name: evolve
+loading_priority: 2
+tokens_estimate: 359
+dependencies: [phase-deploy]
+keywords: [evolve-phase, adoption-metrics, performance-optimization, capability-expansion, value-realization, innovation-proposals, continuous-improvement, governance-rhythm, success-metrics, maturity-model]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Evolve Phase
 
 ## Overview

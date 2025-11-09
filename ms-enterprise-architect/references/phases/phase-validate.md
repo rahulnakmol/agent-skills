@@ -1,3 +1,14 @@
+---
+category: phase
+phase_name: validate
+loading_priority: 2
+tokens_estimate: 566
+dependencies: [phase-vision, frameworks/azure-waf-reliability, frameworks/azure-waf-security, frameworks/powerplatform-waf-reliability, frameworks/powerplatform-waf-security, templates/validate-phase-templates, templates/mermaid-diagram-patterns]
+keywords: [validate-phase, mvp-scope, proof-of-concept, pilot-approach, hypothesis-framework, implementation-approach, validation-execution, pivot-persevere-decision, deliverables, exit-criteria, well-architected-framework]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Validate Phase
 
 ## Overview

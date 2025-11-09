@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: azure-waf
+pillar: operational-excellence
+loading_priority: 2
+tokens_estimate: 3200
+dependencies: [azure-specifics, quality-standards]
+keywords: [operational, DevOps, CI/CD, automation, monitoring, observability, IaC, infrastructure as code]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Operational Excellence - Azure Well-Architected Framework
 
 ## Definition

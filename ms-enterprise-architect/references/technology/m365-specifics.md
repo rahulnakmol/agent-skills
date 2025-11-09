@@ -1,3 +1,14 @@
+---
+category: technology
+platform: m365
+loading_priority: 2
+tokens_estimate: 556
+dependencies: [technology/core-platforms, technology/power-platform-specifics, technology/azure-specifics, technology/dynamics-specifics]
+keywords: [microsoft-365, teams, sharepoint, exchange-online, onedrive, viva, microsoft-graph, intranet, collaboration, content-management, purview, data-loss-prevention, licensing]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Microsoft 365 Platform - Architecture and Integration Patterns
 
 ## Overview

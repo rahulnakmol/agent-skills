@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: powerplatform-waf
+pillar: security
+loading_priority: 2
+tokens_estimate: 3200
+dependencies: [power-platform-specifics, quality-standards]
+keywords: [security, DLP, data loss prevention, Power Platform security, compliance, governance]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Security - Power Platform Well-Architected Framework
 
 ## Definition

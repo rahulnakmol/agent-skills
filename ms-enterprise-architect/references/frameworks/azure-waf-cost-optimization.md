@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: azure-waf
+pillar: cost-optimization
+loading_priority: 2
+tokens_estimate: 2800
+dependencies: [azure-specifics]
+keywords: [cost, optimization, FinOps, budget, pricing, TCO, reserved instances, cost management]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Cost Optimization - Azure Well-Architected Framework
 
 ## Definition

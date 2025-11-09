@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: azure-waf
+pillar: reliability
+loading_priority: 2
+tokens_estimate: 2500
+dependencies: [quality-standards, azure-specifics]
+keywords: [reliability, availability, failover, disaster recovery, RTO, RPO, resilience, high availability, fault tolerance]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Reliability - Azure Well-Architected Framework
 
 ## Definition

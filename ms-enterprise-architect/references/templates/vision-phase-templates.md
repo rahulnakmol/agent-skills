@@ -1,3 +1,14 @@
+---
+category: template
+template_type: vision
+loading_priority: 2
+tokens_estimate: 377
+dependencies: [phases/phase-vision]
+keywords: [vision-phase-templates, target-operating-model, functional-tom, technical-tom, gap-analysis, roadmap, stakeholder-alignment]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Vision Phase Templates
 
 ## Overview

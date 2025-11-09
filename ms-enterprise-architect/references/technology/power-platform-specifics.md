@@ -1,3 +1,14 @@
+---
+category: technology
+platform: power-platform
+loading_priority: 2
+tokens_estimate: 672
+dependencies: [technology/core-platforms, technology/m365-specifics, technology/azure-specifics, technology/dynamics-specifics]
+keywords: [power-apps, power-automate, power-bi, power-pages, copilot-studio, low-code, no-code, dataverse, citizen-developer, business-process-automation, canvas-apps, model-driven-apps, fusion-development, alm]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Power Platform - Low-Code Architecture and Integration Patterns
 
 ## Overview

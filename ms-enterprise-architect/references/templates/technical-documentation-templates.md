@@ -1,3 +1,14 @@
+---
+category: template
+template_type: technical-doc
+loading_priority: 2
+tokens_estimate: 575
+dependencies: [phases/phase-construct, phases/phase-deploy]
+keywords: [technical-documentation, architecture-document, technical-specification, operational-runbook, solution-documentation]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Technical Documentation Templates
 
 ## Overview

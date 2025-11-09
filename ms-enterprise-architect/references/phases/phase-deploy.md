@@ -1,3 +1,14 @@
+---
+category: phase
+phase_name: deploy
+loading_priority: 2
+tokens_estimate: 426
+dependencies: [phase-construct, scenarios/large-scale-migrations, templates/mermaid-diagram-patterns]
+keywords: [deploy-phase, production-deployment, user-migration, data-cutover, legacy-system-decommissioning, production-stabilization, hypercare-period, go-live, cutover-execution, deployment-planning, migration-scenarios]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Deploy Phase
 
 ## Overview

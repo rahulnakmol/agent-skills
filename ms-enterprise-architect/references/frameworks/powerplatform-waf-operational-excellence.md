@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: powerplatform-waf
+pillar: operational-excellence
+loading_priority: 2
+tokens_estimate: 3100
+dependencies: [power-platform-specifics, quality-standards]
+keywords: [ALM, application lifecycle, environment strategy, solution layers, CoE]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Operational Excellence - Power Platform Well-Architected Framework
 
 ## Definition

@@ -1,3 +1,14 @@
+---
+category: template
+template_type: validate
+loading_priority: 2
+tokens_estimate: 455
+dependencies: [phases/phase-validate]
+keywords: [validate-phase-templates, hypothesis-test-plan, mvp-definition, pilot-plan, validation-report, pivot-persevere-decision]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Validate Phase Templates
 
 ## Overview

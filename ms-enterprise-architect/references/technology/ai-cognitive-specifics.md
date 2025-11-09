@@ -1,3 +1,14 @@
+---
+category: technology
+platform: ai-cognitive
+loading_priority: 2
+tokens_estimate: 775
+dependencies: [technology/core-platforms, technology/azure-specifics, technology/power-platform-specifics, technology/m365-specifics, technology/dynamics-specifics, frameworks/agent-development-framework]
+keywords: [azure-openai, gpt-5, gpt-4, generative-ai, cognitive-services, azure-ai-search, document-intelligence, machine-learning, agentic-ai, copilot, semantic-kernel, responsible-ai, prompt-engineering, rag-pattern]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Azure AI & Cognitive Services - Intelligent Solutions Architecture
 
 ## Overview
