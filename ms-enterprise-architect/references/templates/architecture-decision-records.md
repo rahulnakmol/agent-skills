@@ -1,3 +1,14 @@
+---
+category: template
+template_type: adr
+loading_priority: 2
+tokens_estimate: 521
+dependencies: [phases/phase-construct, phases/phase-vision, phases/phase-validate]
+keywords: [adr, architecture-decision-records, decision-documentation, decision-context, decision-rationale, consequences, alternatives, traceability]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Architecture Decision Records (ADR) Templates
 
 ## Overview

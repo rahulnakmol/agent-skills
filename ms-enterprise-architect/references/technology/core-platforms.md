@@ -1,3 +1,14 @@
+---
+category: technology
+platform: core-platforms
+loading_priority: 2
+tokens_estimate: 392
+dependencies: [technology/m365-specifics, technology/power-platform-specifics, technology/azure-specifics, technology/dynamics-specifics, technology/ai-cognitive-specifics]
+keywords: [microsoft-365, power-platform, azure, dynamics-365, ai-cognitive-services, microsoft-entra, platform-selection, platform-integration, decision-framework, licensing]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Microsoft Enterprise Platform Landscape
 
 ## Overview

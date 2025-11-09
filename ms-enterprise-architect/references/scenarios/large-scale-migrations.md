@@ -1,3 +1,14 @@
+---
+category: scenario
+scenario_type: migration
+loading_priority: 3
+tokens_estimate: 1064
+dependencies: [phases/phase-deploy, technology/azure-specifics, technology/m365-specifics, frameworks/azure-waf-reliability, frameworks/azure-waf-security]
+keywords: [large-scale-migration, data-migration, legacy-modernization, phased-rollout, cutover-strategy, parallel-run, pilot-to-rollout, big-bang-migration, coexistence, risk-mitigation, rollback-procedures]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Large-Scale Migrations
 
 ## Overview

@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: architecture-pattern
+pattern: domain-driven-design
+loading_priority: 2
+tokens_estimate: 2700
+dependencies: [azure-specifics, power-platform-specifics, dynamics-specifics]
+keywords: [DDD, bounded context, domain model, ubiquitous language, context map, strategic design, aggregate, entity]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Domain-Driven Design - Strategic Patterns
 
 ## Definition

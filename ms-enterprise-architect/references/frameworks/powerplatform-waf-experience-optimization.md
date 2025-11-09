@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: powerplatform-waf
+pillar: experience-optimization
+loading_priority: 2
+tokens_estimate: 3100
+dependencies: [power-platform-specifics, quality-standards]
+keywords: [experience, UX, usability, adoption, accessibility, user experience]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Experience Optimization - Power Platform Well-Architected Framework
 
 ## Definition

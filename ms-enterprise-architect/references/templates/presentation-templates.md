@@ -1,3 +1,14 @@
+---
+category: template
+template_type: presentation
+loading_priority: 2
+tokens_estimate: 438
+dependencies: [phases/phase-vision, phases/phase-validate, phases/phase-deploy]
+keywords: [presentation-templates, executive-briefing, technical-presentation, stakeholder-communication, slide-deck, visual-communication]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Presentation Templates
 
 ## Overview

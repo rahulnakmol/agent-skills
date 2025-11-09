@@ -1,3 +1,14 @@
+---
+category: template
+template_type: mermaid
+loading_priority: 2
+tokens_estimate: 1481
+dependencies: [phases/phase-vision, phases/phase-validate, phases/phase-construct, phases/phase-deploy]
+keywords: [mermaid-diagrams, diagram-as-code, architecture-diagrams, flowcharts, sequence-diagrams, state-diagrams, c4-diagrams, visual-documentation]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Mermaid Diagram Patterns Library
 
 ## 1. Overview and Branding Integration

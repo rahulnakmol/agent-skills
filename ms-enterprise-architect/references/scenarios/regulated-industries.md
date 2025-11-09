@@ -1,3 +1,14 @@
+---
+category: scenario
+scenario_type: regulated
+loading_priority: 3
+tokens_estimate: 961
+dependencies: [phases/phase-vision, phases/phase-construct, technology/azure-specifics, technology/m365-specifics, frameworks/azure-waf-security]
+keywords: [regulated-industries, compliance, gdpr, hipaa, sox, pci-dss, data-residency, data-sovereignty, audit-logging, encryption, security-controls, governance, privacy]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Regulated Industries Architecture
 
 ## Overview

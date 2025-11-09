@@ -1,3 +1,14 @@
+---
+category: phase
+phase_name: vision
+loading_priority: 2
+tokens_estimate: 654
+dependencies: [frameworks/domain-driven-design, technology/core-platforms, technology/m365-specifics, technology/power-platform-specifics, technology/azure-specifics, technology/dynamics-specifics, technology/ai-cognitive-specifics, frameworks/azure-waf-reliability, frameworks/azure-waf-security, frameworks/azure-waf-cost-optimization, frameworks/azure-waf-operational-excellence, frameworks/azure-waf-performance-efficiency, frameworks/powerplatform-waf-reliability, frameworks/powerplatform-waf-security, frameworks/powerplatform-waf-operational-excellence, frameworks/powerplatform-waf-performance-efficiency, frameworks/powerplatform-waf-experience-optimization, templates/vision-phase-templates, templates/business-case-templates, templates/mermaid-diagram-patterns, templates/architecture-decision-records]
+keywords: [vision-phase, domain-discovery, maturity-assessment, current-state-architecture, target-operating-model, gap-analysis, business-case, roadmap-definition, well-architected-framework, domain-driven-design, exit-criteria, mermaid-patterns]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Vision Phase
 
 ## Overview

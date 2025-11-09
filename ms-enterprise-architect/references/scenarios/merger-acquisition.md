@@ -1,3 +1,14 @@
+---
+category: scenario
+scenario_type: merger-acquisition
+loading_priority: 3
+tokens_estimate: 675
+dependencies: [phases/phase-vision, phases/phase-deploy, technology/azure-specifics, technology/dynamics-specifics, frameworks/azure-waf-security]
+keywords: [merger-acquisition, system-integration, platform-consolidation, data-deduplication, organizational-alignment, transition-planning, risk-management, cultural-integration, dual-systems-coexistence]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Merger and Acquisition Technology Integration
 
 ## Overview

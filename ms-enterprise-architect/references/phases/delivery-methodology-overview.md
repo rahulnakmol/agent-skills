@@ -1,3 +1,14 @@
+---
+category: phase
+phase_name: overview
+loading_priority: 2
+tokens_estimate: 200
+dependencies: []
+keywords: [delivery-methodology, phase-selection, decision-tree, phase-interdependencies, phase-duration, success-patterns, anti-patterns]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Delivery Methodology Overview
 
 ## 5-Phase Approach

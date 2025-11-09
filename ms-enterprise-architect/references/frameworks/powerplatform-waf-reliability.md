@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: powerplatform-waf
+pillar: reliability
+loading_priority: 2
+tokens_estimate: 3500
+dependencies: [power-platform-specifics, quality-standards]
+keywords: [reliability, error handling, retry, Power Platform resilience, fault tolerance]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Reliability - Power Platform Well-Architected Framework
 
 ## Definition

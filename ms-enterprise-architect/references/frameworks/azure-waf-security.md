@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: azure-waf
+pillar: security
+loading_priority: 2
+tokens_estimate: 3000
+dependencies: [quality-standards, azure-specifics]
+keywords: [security, Zero Trust, authentication, authorization, encryption, compliance, identity, threat protection, RBAC]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Security - Azure Well-Architected Framework
 
 ## Definition

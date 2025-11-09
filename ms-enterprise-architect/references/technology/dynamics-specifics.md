@@ -1,3 +1,14 @@
+---
+category: technology
+platform: dynamics
+loading_priority: 2
+tokens_estimate: 712
+dependencies: [technology/core-platforms, technology/power-platform-specifics, technology/m365-specifics, technology/azure-specifics, technology/ai-cognitive-specifics]
+keywords: [dynamics-365, crm, erp, sales, customer-service, marketing, field-service, finance, supply-chain, customer-insights, dataverse, customer-data-platform, business-applications]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Dynamics 365 - Business Applications Platform Architecture
 
 ## Overview

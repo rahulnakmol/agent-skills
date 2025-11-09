@@ -1,3 +1,14 @@
+---
+category: scenario
+scenario_type: multi-geo
+loading_priority: 3
+tokens_estimate: 471
+dependencies: [phases/phase-vision, phases/phase-construct, technology/azure-specifics, frameworks/azure-waf-reliability, frameworks/azure-waf-security]
+keywords: [multi-geo-deployment, global-distribution, data-residency, regulatory-compliance, latency-optimization, disaster-recovery, failover, content-delivery, localization]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Multi-Geo Deployments
 
 ## Overview

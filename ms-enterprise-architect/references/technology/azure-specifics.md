@@ -1,3 +1,14 @@
+---
+category: technology
+platform: azure
+loading_priority: 2
+tokens_estimate: 683
+dependencies: [technology/core-platforms, frameworks/azure-waf-reliability, frameworks/azure-waf-security, frameworks/azure-waf-cost-optimization, frameworks/azure-waf-operational-excellence, frameworks/azure-waf-performance-efficiency]
+keywords: [azure-cloud, virtual-machines, app-service, azure-functions, kubernetes-aks, azure-sql, cosmos-db, blob-storage, service-bus, api-management, entra-id, key-vault, architecture-patterns, microservices]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Azure - Enterprise Cloud Platform Architecture
 
 ## Overview

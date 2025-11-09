@@ -1,3 +1,14 @@
+---
+category: phase
+phase_name: construct
+loading_priority: 2
+tokens_estimate: 413
+dependencies: [phase-vision, phase-validate, frameworks/azure-waf-security, frameworks/powerplatform-waf-security, templates/technical-documentation-templates, templates/architecture-decision-records, templates/mermaid-diagram-patterns]
+keywords: [construct-phase, architecture-design, security-review, integration-design, development, testing, training-materials, deliverables, exit-criteria, well-architected-framework]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Construct Phase
 
 ## Overview

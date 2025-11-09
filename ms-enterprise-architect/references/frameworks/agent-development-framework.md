@@ -1,3 +1,15 @@
+---
+category: framework
+subcategory: ai-architecture
+pattern: multi-agent-systems
+loading_priority: 2
+tokens_estimate: 3500
+dependencies: [ai-cognitive-specifics, azure-specifics, quality-standards]
+keywords: [agent, agentic, Copilot, Azure OpenAI, multi-agent, orchestrator, Semantic Kernel, planner, coordinator]
+version: 1.0
+last_updated: 2025-11-09
+---
+
 # Agent Development Framework - Multi-Agent Systems and Orchestration
 
 ## Definition
