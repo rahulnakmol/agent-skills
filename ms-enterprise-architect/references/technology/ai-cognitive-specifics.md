@@ -23,14 +23,36 @@ Azure AI & Cognitive Services represent Microsoft's comprehensive artificial int
 **Purpose**: Enterprise-grade access to OpenAI's large language models (LLMs)
 
 **Available Models** (as of November 2025):
-- **GPT-4o**: Latest multimodal model with vision, audio, and text (128K tokens context)
+
+**GPT-5 Family** (Latest Generation):
+- **GPT-5**: Next-generation flagship model (requires registration for access)
+- **GPT-5 Mini**: Cost-effective variant of GPT-5 (no registration required)
+- **GPT-5 Nano**: Ultra-efficient model for high-volume scenarios (no registration required)
+- **GPT-5 Chat**: Optimized for conversational AI applications (no registration required)
+- **Launch Regions**: East US 2 and Sweden Central
+
+**GPT-4 Family**:
+- **GPT-4o**: Multimodal model with vision, audio, and text (128K tokens context)
 - **GPT-4o mini**: Cost-effective, fast variant of GPT-4o for common tasks
+- **GPT-4 Turbo**: Previous generation model for complex reasoning (128K tokens)
+- **GPT-4**: Standard model (8K/32K tokens)
+
+**Reasoning Models**:
 - **o1-preview**: Advanced reasoning model with extended thinking for complex problems
 - **o1-mini**: Fast reasoning model optimized for coding, math, and science
-- **GPT-4 Turbo**: Previous generation model for complex reasoning (128K tokens)
+
+**Other Models**:
+- **GPT-3.5 Turbo**: Legacy model for cost-sensitive scenarios
 - **Embeddings (text-embedding-3-small/large)**: Latest embedding models for semantic search
 - **DALL-E 3**: Image generation from text descriptions
 - **Whisper**: Speech-to-text transcription and translation
+
+**Azure AI Foundry Agent Service Model Support** ([details](https://learn.microsoft.com/en-us/azure/ai-foundry/agents/concepts/model-region-support)):
+- Hub-based agent projects support: gpt-4o, gpt-4o-mini, gpt-4, gpt-35-turbo
+- Model availability varies by region and cloud deployment type (standard vs. provisioned)
+- Global deployment options available for higher throughput across Azure infrastructure
+- Regional expansion: Brazil South, Germany West Central, Italy North, South Central US
+- **Note**: File search tool currently unavailable in Italy North and Brazil South regions
 
 **Key Capabilities**:
 - **Content Generation**: Articles, summaries, translations
