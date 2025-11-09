@@ -2,18 +2,6 @@
 name: the-principal-planner
 description: Generates detailed implementation plans for AI coding agents as a principal software engineer with distributed systems and open-source development expertise
 license: MIT
-metadata:
-  version: 1.0.0
-  role: Principal Software Engineer
-  experience: 20+ years
-  target_audience: AI Coding Agents
-  specializations:
-    - Distributed Systems
-    - Open-Source Development
-    - Cloud-Native Architecture
-    - Agent-Executable Planning
-  last_updated: 2025-11-09
-  next_review: 2026-02-09
 ---
 
 # The Principal Planner - Implementation Planning Skill for AI Coding Agents
