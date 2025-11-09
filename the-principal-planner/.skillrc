@@ -1,0 +1,165 @@
+skill:
+  name: the-principal-planner
+  version: 1.0.0
+  last_updated: 2025-11-09
+  next_review: 2026-02-09
+
+classification:
+  type: implementation-planning
+  domain: software-engineering
+  methodology: safe-invest-agile
+
+expertise:
+  role: principal-software-engineer
+  experience_years: 20+
+  specializations:
+    - distributed-systems
+    - open-source-development
+    - cloud-native-architecture
+    - agile-methodologies
+
+workflow:
+  phases:
+    - discovery-and-context-gathering
+    - solution-architecture
+    - detailed-planning
+    - plan-generation
+
+  methodologies:
+    - SAFe (Scaled Agile Framework)
+    - INVEST (Independent, Negotiable, Valuable, Estimable, Small, Testable)
+    - Story Mapping
+    - Iteration Planning
+
+tech_stack_coverage:
+  dotnet:
+    - CSharp (latest stable)
+    - Azure Cloud
+    - Azure Functions, App Services, Container Apps
+    - Azure DevOps, GitHub Actions
+
+  python:
+    - Python 3.11+
+    - FastAPI, Django, Flask
+    - Cloud-agnostic deployment
+    - ML pipelines
+
+  golang:
+    - Go 1.21+
+    - GCP (Cloud Run, Cloud Functions, GKE)
+    - Firebase
+    - gRPC, REST APIs
+
+  typescript_node:
+    - Node.js, Bun
+    - Express, Fastify, NestJS
+    - Serverless, containerized deployments
+
+  typescript_react:
+    - React with shadcn/ui
+    - React with Fluent UI v9+
+    - Component architecture
+    - State management
+
+  typescript_svelte:
+    - Svelte, SvelteKit
+    - TailwindCSS
+    - SSR, static generation
+
+  alpine_tailwind:
+    - Alpine.js with TailwindCSS
+    - Third-party embedding
+    - Progressive enhancement
+    - Minimal bundle sizes
+
+model_requirements:
+  supported:
+    - claude-opus-4.1
+    - claude-opus-4
+    - claude-sonnet-4.5
+    - claude-sonnet-4
+  reasoning: Deep technical reasoning and contextual understanding required
+
+integration:
+  linear_mcp: true  # Fetch PRDs from Linear.app
+  supports_attachments: true  # Process PRDs, specs, diagrams, wireframes
+
+deliverables:
+  prd_structure: safe-aligned-feature-prd
+  plan_format: detailed-implementation-plan-md
+  story_format: invest-compliant-user-stories
+  task_breakdown: iterations-stories-tasks-subtasks
+
+key_principles:
+  - INVEST-compliant user stories
+  - SAFe methodology alignment
+  - 1 PRD = 1 Feature paradigm
+  - Iteration-based delivery (2-week sprints)
+  - NFRs addressed throughout
+  - Test-driven approach
+  - Definition of Done rigor
+  - Technical debt tracking
+  - Risk-first planning
+
+quality_standards:
+  - Realistic time estimates
+  - Clear acceptance criteria
+  - Testable success metrics
+  - Dependency mapping
+  - Risk mitigation strategies
+  - Architecture decision records
+  - Continuous integration focus
+  - Incremental value delivery
+
+output_artifacts:
+  - PRD.md (SAFe-aligned Feature documentation)
+  - [featurename]-plan.md (detailed implementation plan)
+  - Architecture Decision Records (ADRs)
+  - API specifications (OpenAPI/Swagger)
+  - Data models and ER diagrams
+  - Test strategy documentation
+
+platforms:
+  compatible:
+    - Claude Chat (web)
+    - Claude Code
+
+  optimized_for:
+    - Complex feature planning
+    - Multi-iteration projects
+    - Cross-functional teams
+    - Agile delivery environments
+
+changelog:
+  - version: 1.0.0
+    date: 2025-11-09
+    changes:
+      - Initial release
+      - 4-phase workflow implementation
+      - SAFe/INVEST methodology integration
+      - 7 tech stack coverage areas
+      - PRD creation with INVEST validation
+      - Solution architecture with 3+ options analysis
+      - Detailed iteration planning with story breakdown
+      - NFR implementation throughout iterations
+      - Definition of Done enforcement
+      - Risk register and mitigation strategies
+      - DevOps and deployment planning
+      - Success metrics and validation framework
+
+maintenance:
+  review_cycle: quarterly
+  update_triggers:
+    - SAFe framework updates
+    - Technology stack version changes
+    - New architectural patterns
+    - Community best practices evolution
+    - Cloud platform updates
+
+metrics:
+  quality_targets:
+    plan_completeness: 100%
+    invest_compliance: 100%
+    safe_alignment: 100%
+    technical_accuracy: 100%
+    actionability_score: 95%
