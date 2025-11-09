@@ -357,12 +357,12 @@ flowchart TB
     STT --> Store
     Store --> Analytics
 
-    classDef call fill:#7fba00,stroke:#5e8c00,color:#fff
+    classDef callnode fill:#7fba00,stroke:#5e8c00,color:#fff
     classDef process fill:#0078d4,stroke:#004578,color:#fff
     classDef storage fill:#50e6ff,stroke:#0078d4,color:#000
     classDef action fill:#f25022,stroke:#c03a1a,color:#fff
 
-    class Call call
+    class Call callnode
     class STT,Sentiment,KeyPhrase,PII process
     class Store,Analytics storage
     class Alert,Suggest action
