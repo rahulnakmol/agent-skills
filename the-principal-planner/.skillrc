@@ -8,15 +8,21 @@ classification:
   type: implementation-planning
   domain: software-engineering
   methodology: safe-invest-agile
+  target_audience: ai-coding-agents
 
 expertise:
   role: principal-software-engineer
   experience_years: 20+
+  target_consumers:
+    - claude-code
+    - openai-codex
+    - cursor
+    - github-copilot-workspace
   specializations:
     - distributed-systems
     - open-source-development
     - cloud-native-architecture
-    - agile-methodologies
+    - agent-executable-planning
 
 workflow:
   phases:
@@ -40,9 +46,14 @@ tech_stack_coverage:
 
   python:
     - Python 3.11+
-    - FastAPI, Django, Flask
+    - Web APIs (FastAPI, Django, Flask, Starlette)
+    - Machine Learning (TensorFlow, PyTorch, scikit-learn, Hugging Face)
+    - Data Analysis (pandas, NumPy, Polars, DuckDB)
+    - Statistical Modelling (statsmodels, scipy, PyMC)
+    - Agentic Automation (LangChain, LlamaIndex, CrewAI, AutoGen)
+    - Data Engineering (Airflow, Prefect, Dagster)
     - Cloud-agnostic deployment
-    - ML pipelines
+    - Containerized and serverless deployments
 
   golang:
     - Go 1.21+
@@ -86,38 +97,47 @@ integration:
 
 deliverables:
   prd_structure: safe-aligned-feature-prd
-  plan_format: detailed-implementation-plan-md
+  plan_format: agent-executable-implementation-plan-md
   story_format: invest-compliant-user-stories
   task_breakdown: iterations-stories-tasks-subtasks
+  execution_format: precise-file-level-instructions
 
 key_principles:
+  - Agent-executable instructions (no human interpretation needed)
   - INVEST-compliant user stories
-  - SAFe methodology alignment
+  - SAFe methodology alignment for organization
   - 1 PRD = 1 Feature paradigm
-  - Iteration-based delivery (2-week sprints)
-  - NFRs addressed throughout
-  - Test-driven approach
-  - Definition of Done rigor
+  - Iteration-based delivery structure
+  - Precise file paths and code signatures
+  - NFRs with verification commands
+  - Test-driven approach with exact test commands
+  - Definition of Done with automated verification
   - Technical debt tracking
   - Risk-first planning
+  - Unambiguous execution steps
 
 quality_standards:
-  - Realistic time estimates
-  - Clear acceptance criteria
-  - Testable success metrics
-  - Dependency mapping
-  - Risk mitigation strategies
+  - Agent-executable without human clarification
+  - Precise file paths and exact commands
+  - Clear acceptance criteria with verification commands
+  - Testable success metrics (automated)
+  - Dependency mapping with installation commands
+  - Risk mitigation strategies (technical)
   - Architecture decision records
   - Continuous integration focus
-  - Incremental value delivery
+  - Incremental value delivery per task
+  - Unambiguous instructions at every step
 
 output_artifacts:
   - PRD.md (SAFe-aligned Feature documentation)
-  - [featurename]-plan.md (detailed implementation plan)
+  - [featurename]-plan.md (agent-executable implementation plan)
   - Architecture Decision Records (ADRs)
-  - API specifications (OpenAPI/Swagger)
-  - Data models and ER diagrams
-  - Test strategy documentation
+  - API specifications (OpenAPI/Swagger with examples)
+  - Data models and ER diagrams with migration scripts
+  - Test strategy with exact test commands
+  - File structure specifications
+  - Verification command sequences
+  - Build and deployment instructions
 
 platforms:
   compatible:
@@ -134,18 +154,22 @@ changelog:
   - version: 1.0.0
     date: 2025-11-09
     changes:
-      - Initial release
+      - Initial release targeting AI coding agents
       - 4-phase workflow implementation
-      - SAFe/INVEST methodology integration
+      - SAFe/INVEST methodology for organization
       - 7 tech stack coverage areas
+      - Expanded Python coverage (APIs, ML, data analysis, statistical modelling, agentic automation)
+      - Agent-executable instruction format
       - PRD creation with INVEST validation
       - Solution architecture with 3+ options analysis
-      - Detailed iteration planning with story breakdown
-      - NFR implementation throughout iterations
-      - Definition of Done enforcement
-      - Risk register and mitigation strategies
-      - DevOps and deployment planning
-      - Success metrics and validation framework
+      - Detailed iteration planning with file-level task breakdown
+      - Precise file paths and code signatures
+      - NFR implementation with verification commands
+      - Definition of Done with automated verification
+      - Risk register and technical mitigation strategies
+      - DevOps and deployment planning with exact commands
+      - Success metrics with programmatic validation
+      - Unambiguous execution steps for autonomous agent execution
 
 maintenance:
   review_cycle: quarterly
