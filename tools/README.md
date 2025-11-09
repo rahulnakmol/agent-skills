@@ -39,7 +39,7 @@ cd ms-enterprise-architect
 
 **Output:**
 - File: `../skill-name.skill`
-- Format: tar.gz with .skill extension
+- Format: ZIP archive with .skill extension
 - Location: Parent directory of skill
 
 ## Adding New Tools
