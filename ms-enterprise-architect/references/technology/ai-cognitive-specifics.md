@@ -22,13 +22,15 @@ Azure AI & Cognitive Services represent Microsoft's comprehensive artificial int
 
 **Purpose**: Enterprise-grade access to OpenAI's large language models (LLMs)
 
-**Available Models**:
-- **GPT-4 Turbo**: Most capable model for complex reasoning (128K tokens context)
-- **GPT-4**: Advanced reasoning and generation (8K/32K tokens)
-- **GPT-3.5 Turbo**: Fast, cost-effective for most tasks (16K tokens)
-- **Embeddings**: Text embedding for semantic search and similarity
+**Available Models** (as of November 2025):
+- **GPT-4o**: Latest multimodal model with vision, audio, and text (128K tokens context)
+- **GPT-4o mini**: Cost-effective, fast variant of GPT-4o for common tasks
+- **o1-preview**: Advanced reasoning model with extended thinking for complex problems
+- **o1-mini**: Fast reasoning model optimized for coding, math, and science
+- **GPT-4 Turbo**: Previous generation model for complex reasoning (128K tokens)
+- **Embeddings (text-embedding-3-small/large)**: Latest embedding models for semantic search
 - **DALL-E 3**: Image generation from text descriptions
-- **Whisper**: Speech-to-text transcription
+- **Whisper**: Speech-to-text transcription and translation
 
 **Key Capabilities**:
 - **Content Generation**: Articles, summaries, translations
@@ -179,6 +181,28 @@ flowchart LR
 - Implement incremental indexing for large datasets
 - Use AI enrichment for unstructured content
 - Monitor search analytics to improve relevance
+
+**Agentic Retrieval Pattern** ([learn more](https://learn.microsoft.com/en-us/azure/search/agentic-retrieval-overview)):
+
+Azure AI Search now supports agentic retrieval patterns where AI agents autonomously:
+- Formulate search queries based on user intent
+- Retrieve relevant documents from multiple indexes
+- Re-rank and synthesize results
+- Iteratively refine queries based on results
+- Combine search with other data sources
+
+**Key Features**:
+- **Dynamic query generation**: LLM generates optimal search queries
+- **Multi-turn retrieval**: Agent refines queries across multiple rounds
+- **Cross-index search**: Query multiple indexes simultaneously
+- **Semantic re-ranking**: Re-order results based on relevance
+- **Citation and provenance**: Track source documents for transparency
+
+**Use Cases**:
+- Research assistants that autonomously gather information
+- Multi-step question answering across knowledge bases
+- Complex analytical queries requiring multiple data sources
+- Enterprise copilots with dynamic knowledge retrieval
 
 ---
 
@@ -503,10 +527,13 @@ flowchart TB
 4. **Tools/Skills**: Functions the agent can call (APIs, databases, services)
 5. **Knowledge**: RAG with Azure AI Search for grounding
 
-**Frameworks**:
-- **Semantic Kernel**: Microsoft's SDK for AI orchestration (.NET, Python, Java)
-- **LangChain**: Popular Python framework for LLM applications
-- **AutoGen**: Microsoft Research framework for multi-agent systems
+**Microsoft AI Orchestration Frameworks**:
+- **Microsoft Agent Framework**: Enterprise-grade open-source framework for building production agentic AI applications ([learn more](https://learn.microsoft.com/en-us/agent-framework/overview/agent-framework-overview))
+- **Azure AI Foundry**: Unified platform for building, evaluating, and deploying agentic AI solutions ([learn more](https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/))
+- **Semantic Kernel**: Microsoft's SDK for AI orchestration with plugins and planners (.NET, Python, Java) ([learn more](https://learn.microsoft.com/en-us/semantic-kernel/))
+- **Copilot Studio**: Low-code platform for building custom copilots and agents ([learn more](https://learn.microsoft.com/en-us/microsoft-copilot-studio/overview))
+- **AutoGen**: Microsoft Research framework for multi-agent conversation systems ([learn more](https://github.com/microsoft/autogen))
+- **Agent Factory**: Microsoft's reference architecture and patterns for agentic AI ([learn more](https://azure.microsoft.com/en-us/blog/agent-factory/))
 
 ---
 
@@ -676,15 +703,106 @@ flowchart TB
 
 ### Azure AI + Microsoft 365
 
-**Copilot for M365**:
-- Chat (enterprise-wide assistant)
-- Word, Excel, PowerPoint, Outlook, Teams copilots
-- Grounded in organizational data via Microsoft Graph
+**Microsoft 365 Copilot**:
+- **Chat**: Enterprise-wide AI assistant with organizational context
+- **Copilots in Apps**: Word, Excel, PowerPoint, Outlook, Teams, OneNote
+- **Microsoft Graph Grounding**: Accesses organizational data (emails, documents, chats, calendar)
+- **Enterprise-grade Security**: Data stays within tenant boundary, no training on customer data
 
-**Custom Copilots**:
-- Build custom copilots with Copilot Studio
-- Extend with Azure OpenAI and custom plugins
-- Integrate with SharePoint, Teams, other M365 services
+**Microsoft 365 Copilot Extensibility** ([learn more](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview)):
+
+Extend Microsoft 365 Copilot with custom capabilities:
+
+1. **Graph Connectors**: Index external data sources into Microsoft Graph
+   - CRM systems, project management tools, knowledge bases
+   - Makes external data searchable and available to Copilot
+
+2. **Plugins**: Add custom actions and integrations
+   - **API Plugins**: Call external REST APIs from Copilot
+   - **Copilot Studio Plugins**: Build low-code conversational plugins
+   - **Message Extensions**: Surface app data in Teams and Copilot
+
+3. **Declarative Agents**: Custom copilots with specific instructions and knowledge
+   - Define agent behavior with natural language instructions
+   - Connect to specific data sources via Graph connectors
+   - Deploy in Teams, Outlook, or as standalone copilots
+
+4. **Copilot Studio Agents**: Build sophisticated multi-turn agents
+   - Low-code agent builder with pre-built templates
+   - Integration with Power Platform, Dynamics 365, Azure AI
+   - Publish to Microsoft 365, Teams, websites, custom apps
+
+**Architecture Pattern - M365 Copilot Extensibility**:
+
+```mermaid
+flowchart TB
+    subgraph M365["Microsoft 365"]
+        User[User]
+        Copilot[Microsoft 365<br/>Copilot]
+        Teams[Teams]
+        Outlook[Outlook]
+        Word[Word]
+    end
+
+    subgraph Extensions["Copilot Extensions"]
+        Plugin[API Plugin]
+        GraphConn[Graph Connector]
+        Agent[Declarative Agent]
+    end
+
+    subgraph Backend["Backend Services"]
+        API[Custom APIs]
+        External[External Systems<br/>CRM/ERP]
+        AzureAI[Azure OpenAI]
+    end
+
+    subgraph Data["Microsoft Graph"]
+        GraphData[Graph Data]
+        ExternalData[Indexed External Data]
+    end
+
+    User --> Copilot
+    Copilot --> Teams
+    Copilot --> Outlook
+    Copilot --> Word
+
+    Copilot --> Plugin
+    Copilot --> GraphConn
+    Copilot --> Agent
+
+    Plugin --> API
+    GraphConn --> External
+    GraphConn --> ExternalData
+
+    Agent --> AzureAI
+    Agent --> GraphData
+
+    Copilot --> GraphData
+
+    classDef m365 fill:#7fba00,stroke:#5e8c00,color:#fff
+    classDef ext fill:#0078d4,stroke:#004578,color:#fff
+    classDef backend fill:#f25022,stroke:#c03a1a,color:#fff
+    classDef data fill:#50e6ff,stroke:#0078d4,color:#000
+
+    class User,Copilot,Teams,Outlook,Word m365
+    class Plugin,GraphConn,Agent ext
+    class API,External,AzureAI backend
+    class GraphData,ExternalData data
+```
+
+**Extensibility Use Cases**:
+- **Enterprise Knowledge Integration**: Connect Copilot to internal wikis, documentation, procedures
+- **CRM/ERP Integration**: Surface customer data, order status, inventory from business systems
+- **Workflow Automation**: Create approvals, submit tickets, update records via conversational interface
+- **Specialized Assistants**: Build domain-specific copilots (HR, Finance, Legal, Sales)
+
+**Best Practices**:
+- Start with Graph connectors to make existing data accessible
+- Use declarative agents for simple, focused use cases
+- Use Copilot Studio for complex multi-turn conversations
+- Implement proper authentication and authorization for plugins
+- Test extensions in Teams before rolling out to M365 Copilot
+- Monitor usage analytics to optimize agent performance
 
 ---
 
@@ -841,13 +959,27 @@ Load this reference when:
 
 **Azure OpenAI**:
 - Azure OpenAI Service: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+- Latest Models: https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models
 - Prompt Engineering: https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering
 - Azure OpenAI Best Practices: https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/best-practices
 
+**Agentic AI Frameworks**:
+- Microsoft Agent Framework: https://learn.microsoft.com/en-us/agent-framework/overview/agent-framework-overview
+- Azure AI Foundry: https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/
+- Semantic Kernel: https://learn.microsoft.com/en-us/semantic-kernel/
+- AutoGen: https://github.com/microsoft/autogen
+- Agent Factory: https://azure.microsoft.com/en-us/blog/agent-factory/
+
 **Azure AI Search**:
 - Documentation: https://learn.microsoft.com/en-us/azure/search/
+- Agentic Retrieval: https://learn.microsoft.com/en-us/azure/search/agentic-retrieval-overview
 - Vector Search: https://learn.microsoft.com/en-us/azure/search/vector-search-overview
 - Semantic Search: https://learn.microsoft.com/en-us/azure/search/semantic-search-overview
+
+**Microsoft 365 Copilot**:
+- Copilot Studio: https://learn.microsoft.com/en-us/microsoft-copilot-studio/overview
+- M365 Copilot Extensibility: https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview
+- Declarative Agents: https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agents
 
 **Document Intelligence**:
 - Overview: https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/
