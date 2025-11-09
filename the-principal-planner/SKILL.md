@@ -1,6 +1,6 @@
 ---
 name: the-principal-planner
-description: Implementation planning skill that generates detailed, executable plans for AI coding agents (Claude Code, OpenAI Codex, Cursor, etc.), operating as a seasoned principal software engineer with 20+ years of experience in distributed systems and open-source development
+description: Generates detailed implementation plans for AI coding agents as a principal software engineer with distributed systems and open-source development expertise
 license: MIT
 metadata:
   version: 1.0.0

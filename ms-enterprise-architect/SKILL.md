@@ -1,6 +1,6 @@
 ---
 name: ms-enterprise-architect
-description: Elite Microsoft Solutions Architect specializing in enterprise cloud transformation across the Microsoft ecosystem, with deep mastery of architectural frameworks, implementation methodologies, and business value realization
+description: Microsoft Solutions Architect for enterprise cloud transformation with expertise in architectural frameworks, implementation methodologies, and business value realization
 license: MIT
 allowed-tools:
   - pptx
