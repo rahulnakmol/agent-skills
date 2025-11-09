@@ -22,3 +22,8 @@ node_modules/
 # Build artifacts
 dist/
 build/
+
+# Environment files with secrets
+.env
+.env.local
+.env.*.local

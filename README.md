@@ -63,6 +63,33 @@ Skills can be accessed through:
 - **Claude.ai**: Available for paid users through skill upload
 - **Claude API**: Integrate via the Skills API
 
+## MCP Servers Integration
+
+This repository includes Model Context Protocol (MCP) server configurations that extend Claude Code Agent with powerful integrations:
+
+### Available Servers
+
+- **Sequential Thinking** - Enhanced structured reasoning and problem-solving
+- **Context7** - Real-time code documentation and library references
+- **GitHub** - Repository management, issues, and pull requests
+- **Playwright** - Browser automation and web testing
+- **Linear** - Project management and issue tracking
+- **Figma** - Design file access and design-to-code workflows
+- **Azure** - Azure services management and DevOps integration
+
+### Quick Setup
+
+1. Copy the environment template:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Add your API keys to `.env` (see [MCP_SERVERS.md](MCP_SERVERS.md) for detailed instructions)
+
+3. Claude Code will automatically load the MCP configurations from `.mcp.json`
+
+For comprehensive setup instructions, API key generation guides, usage examples, and troubleshooting, see **[MCP_SERVERS.md](MCP_SERVERS.md)**.
+
 ## Examples and Inspiration
 
 For a comprehensive collection of example skills, see the official [Anthropic Skills Repository](https://github.com/anthropics/skills), which includes:
