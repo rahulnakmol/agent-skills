@@ -17,10 +17,11 @@ Architecture Decision Records (ADRs) document important architectural decisions 
 An ADR is a document that captures a significant architectural decision along with its context and consequences. Key characteristics:
 
 - **Immutable**: Once accepted, ADRs are not edited; they are superseded by new ADRs
-- **Numbered**: Sequential numbering for easy reference (ADR-001, ADR-002, etc.)
-- **Concise**: Typically 1-2 pages, focused on the decision
-- **Discoverable**: Stored in version control, searchable
-- **Context-rich**: Explains the "why" not just the "what"
+- **Structured Reference Number**: Format MS-[TECH]-[PLATFORM]-[PROJECT]-XXX for traceability
+- **Focused on 5 Core Sections**: Ref No, Title, Context, Decision, Consequences
+- **Concise**: Typically 2-3 pages, comprehensive yet focused
+- **Discoverable**: Stored in version control, searchable by project and technology
+- **Context-rich**: Explains technical/functional context, gaps, assumptions, and key considerations
 
 ---
 
@@ -29,152 +30,286 @@ An ADR is a document that captures a significant architectural decision along wi
 ### Standard ADR Template (use **docx skill**)
 
 ```markdown
-# ADR-[NUMBER]: [Short Title of Decision]
+# Architecture Decision Record
 
-**Status**: [Proposed | Accepted | Deprecated | Superseded by ADR-XXX]
+## ADR Ref No
+**MS-[TECH]-[PLATFORM]-[PROJECT]-XXX**
+
+Examples:
+- MS-AI-PP-CALLCENTER-001 (AI solution, Power Platform, Call Center project)
+- MS-DATA-AZURE-ANALYTICS-001 (Data solution, Azure, Analytics project)
+- MS-INT-D365-CRM-001 (Integration solution, Dynamics 365, CRM project)
+- MS-SEC-ENTRA-ENTERPRISE-001 (Security solution, Entra ID, Enterprise-wide)
+
+**Format Components**:
+- **MS**: Microsoft (constant prefix)
+- **[TECH]**: Technology domain (AI, DATA, INT, SEC, INFRA, APP)
+- **[PLATFORM]**: Microsoft platform (PP=Power Platform, AZURE, D365, M365, ENTRA)
+- **[PROJECT]**: Project name (uppercase, no spaces)
+- **XXX**: Sequential number (001, 002, etc.)
+
+**Status**: [Proposed | Accepted | Deprecated | Superseded by MS-XX-XX-XX-XXX]
 
 **Date**: [YYYY-MM-DD]
 
-**Deciders**: [List of people involved in the decision]
+**Author(s)**: [Name(s) of decision makers]
 
-**Technical Context**: [e.g., Construct Phase, Production Deployment]
+**Reviewers**: [Name(s) of reviewers]
+
+---
+
+## Title
+[A terse definition of what the decision is or related to]
+
+**Example**: "Adopt Azure OpenAI Service with RAG Pattern for Customer Service Copilot"
 
 ---
 
 ## Context
 
-### Current Situation
-[Describe the current state, problem, or opportunity]
+### Technical Context
+[Describe the technical landscape, current architecture, and relevant systems]
 
-### Forces at Play
-[List the factors, constraints, and requirements influencing the decision]
+**Current State**:
+- [Description of existing architecture or absence of solution]
+- [Relevant technologies in use]
+- [Integration points and dependencies]
 
-**Business Drivers**:
-- [Driver 1]: [Description]
-- [Driver 2]: [Description]
+**Functional Context**:
+- [Business requirements driving this decision]
+- [User needs and expectations]
+- [Functional capabilities required]
 
-**Technical Constraints**:
-- [Constraint 1]: [Description]
-- [Constraint 2]: [Description]
+### Gaps
+[List current gaps that this decision addresses]
 
-**Regulatory/Compliance**:
-- [Requirement 1]: [Description]
+1. **[Gap 1]**: [Description of what's missing or broken]
+2. **[Gap 2]**: [Description]
+3. **[Gap 3]**: [Description]
 
-**Quality Attributes**:
-- [Attribute 1 - e.g., Performance]: [Target or requirement]
-- [Attribute 2 - e.g., Security]: [Target or requirement]
+### Technical Assumptions
+[State assumptions being made for this decision]
+
+1. **[Assumption 1]**: [e.g., "Azure OpenAI Service will be available in our region"]
+2. **[Assumption 2]**: [e.g., "User adoption will reach 80% within 6 months"]
+3. **[Assumption 3]**: [e.g., "Integration with existing CRM is technically feasible"]
+4. **[Assumption 4]**: [e.g., "Budget approved for $XXX over Y years"]
+
+### Key Considerations
+[Factors that influenced the decision]
+
+**Performance Requirements**:
+- [Requirement 1]: [Target metric - e.g., "Response time < 2 seconds"]
+- [Requirement 2]: [Target metric]
+
+**Security & Compliance**:
+- [Requirement 1]: [e.g., "GDPR compliance required"]
+- [Requirement 2]: [e.g., "Zero Trust architecture alignment"]
+
+**Cost Constraints**:
+- [Budget limitations or cost targets]
+- [TCO considerations]
+
+**Scalability Needs**:
+- [Expected growth or load requirements]
+- [Geographic distribution requirements]
+
+**Integration Requirements**:
+- [Systems that must integrate]
+- [Data exchange requirements]
+
+**Operational Requirements**:
+- [SLA targets - e.g., 99.9% availability]
+- [Support model requirements]
 
 ---
 
 ## Decision
 
-**We will**: [Clear, concise statement of the decision]
+[Detailed description of the architecture decision]
 
-[Detailed explanation of what was decided, including:]
-- Specific technology, pattern, or approach chosen
-- Scope and boundaries of the decision
-- Implementation approach
-- Timeline or phasing (if applicable)
+### What We Will Do
 
----
+**Primary Decision**:
+[Clear, detailed statement of what was decided]
 
-## Rationale
+**Technology/Platform Selected**:
+- [Specific technology chosen - e.g., "Azure OpenAI Service GPT-4o"]
+- [Specific components - e.g., "Azure AI Search for RAG implementation"]
+- [Specific patterns - e.g., "Retrieval Augmented Generation (RAG) pattern"]
 
-**Why this decision**:
+**Architecture Approach**:
+[Describe the architectural pattern or approach]
 
-1. **[Reason 1]**: [Explanation of how this decision addresses a force/constraint]
-2. **[Reason 2]**: [Explanation]
-3. **[Reason 3]**: [Explanation]
+Example:
+```
+We will implement a RAG-based copilot using:
+1. Azure OpenAI Service (GPT-4o model) for natural language understanding and generation
+2. Azure AI Search for vector and semantic search over knowledge base
+3. Dataverse as the primary data source for customer records
+4. Power Platform (Power Apps + Copilot Studio) for low-code front-end
+5. Azure API Management for secure API access and throttling
+```
 
-**Key Benefits**:
-- [Benefit 1]: [Description and impact]
-- [Benefit 2]: [Description and impact]
+**Scope and Boundaries**:
+- **In Scope**: [What this decision covers]
+- **Out of Scope**: [What this decision does not cover]
+- **Future Consideration**: [What might be addressed later]
 
-**Alignment**:
-- Aligns with [corporate strategy/technical vision/architecture principle]
-- Supports [Well-Architected Framework pillar - e.g., Security, Reliability]
+**Implementation Approach**:
+1. **Phase 1**: [Description - e.g., "Pilot with 50 users in customer service"]
+2. **Phase 2**: [Description - e.g., "Expand to all 200 service agents"]
+3. **Phase 3**: [Description - e.g., "Add multilingual support"]
 
----
+**Well-Architected Framework Alignment**:
+- **Reliability**: [How this decision supports reliability]
+- **Security**: [How this decision supports security]
+- **Cost Optimization**: [Cost considerations]
+- **Operational Excellence**: [Operational benefits]
+- **Performance Efficiency**: [Performance approach]
 
-## Alternatives Considered
+### Alternatives Considered
 
-### Alternative 1: [Name]
-**Description**: [What was this option?]
+**Alternative 1**: [Name - e.g., "Build custom LLM using Azure ML"]
+- **Pros**: [List advantages]
+- **Cons**: [List disadvantages]
+- **Why Not Chosen**: [Reason]
 
-**Pros**:
-- [Pro 1]
-- [Pro 2]
+**Alternative 2**: [Name - e.g., "Use third-party SaaS copilot solution"]
+- **Pros**: [List advantages]
+- **Cons**: [List disadvantages]
+- **Why Not Chosen**: [Reason]
 
-**Cons**:
-- [Con 1]
-- [Con 2]
-
-**Why Not Chosen**: [Brief explanation]
-
-### Alternative 2: [Name]
-[Same structure as Alternative 1]
-
-### Alternative 3: Do Nothing / Status Quo
-**Description**: Continue with current approach
-
-**Why Not Chosen**: [Risks and costs of inaction]
+**Alternative 3**: [Name - e.g., "Do nothing / manual process"]
+- **Pros**: [List advantages if any]
+- **Cons**: [List disadvantages]
+- **Why Not Chosen**: [Reason]
 
 ---
 
 ## Consequences
 
-### Positive Consequences
-- **[Consequence 1]**: [Description of benefit]
-- **[Consequence 2]**: [Description of benefit]
+[Defines what happens when we apply the decision]
 
-### Negative Consequences / Trade-offs
-- **[Consequence 1]**: [Description of drawback or compromise]
-  - **Mitigation**: [How we'll address this]
-- **[Consequence 2]**: [Description]
-  - **Mitigation**: [How we'll address this]
+### What Happens When Applied
 
-### Risks
-- **[Risk 1]**: [Description] - **Mitigation**: [Strategy]
-- **[Risk 2]**: [Description] - **Mitigation**: [Strategy]
+**Immediate Effects**:
+1. [Effect 1 - e.g., "Customer service agents gain AI-powered assistance for case resolution"]
+2. [Effect 2 - e.g., "Knowledge base becomes searchable via natural language queries"]
+3. [Effect 3 - e.g., "Average handle time expected to reduce by 30%"]
 
-### Impact Areas
-- **Development**: [How this affects development process]
-- **Operations**: [How this affects operations]
-- **Cost**: [Financial implications - one-time and recurring]
-- **Skills**: [Team skills needed, training required]
-- **Vendors**: [Vendor dependencies created or removed]
+**Medium-Term Effects** (3-6 months):
+1. [Effect 1 - e.g., "Agent productivity increases as AI learns from historical data"]
+2. [Effect 2 - e.g., "Customer satisfaction scores improve due to faster resolution"]
 
----
+**Long-Term Effects** (6-12+ months):
+1. [Effect 1 - e.g., "AI copilot becomes primary knowledge source for agents"]
+2. [Effect 2 - e.g., "Reduced training time for new agents"]
 
-## Implementation Notes
+### Risks Mitigated
 
-**Prerequisites**:
-- [Prerequisite 1]
-- [Prerequisite 2]
+**Risk 1**: [Risk name - e.g., "Knowledge Loss from Employee Turnover"]
+- **How Mitigated**: [Explanation - e.g., "AI copilot captures and codifies institutional knowledge in searchable format"]
+- **Impact**: [High/Medium/Low reduction in risk]
 
-**Timeline**:
-- [Phase 1]: [Timeframe and activities]
-- [Phase 2]: [Timeframe and activities]
+**Risk 2**: [Risk name - e.g., "Inconsistent Customer Experience"]
+- **How Mitigated**: [Explanation]
+- **Impact**: [High/Medium/Low reduction in risk]
 
-**Success Criteria**:
-- [Criterion 1]: [How we'll measure success]
-- [Criterion 2]: [How we'll measure success]
+**Risk 3**: [Risk name - e.g., "Compliance Violations from Human Error"]
+- **How Mitigated**: [Explanation]
+- **Impact**: [High/Medium/Low reduction in risk]
 
----
+### Risks Introduced
 
-## Related Decisions
+**Risk 1**: [New risk - e.g., "AI Hallucination Leading to Incorrect Information"]
+- **Mitigation Strategy**: [How we'll address - e.g., "Implement RAG pattern to ground responses in verified data, add citation links, human-in-the-loop for critical decisions"]
+- **Likelihood**: [High/Medium/Low]
+- **Impact**: [High/Medium/Low]
 
-- **ADR-XXX**: [Related decision title] - [Relationship description]
-- **ADR-YYY**: [Related decision title] - [Relationship description]
+**Risk 2**: [New risk - e.g., "Vendor Lock-in to Azure OpenAI"]
+- **Mitigation Strategy**: [How we'll address]
+- **Likelihood**: [High/Medium/Low]
+- **Impact**: [High/Medium/Low]
+
+### Operational Impacts
+
+**Development Operations**:
+- [Impact 1 - e.g., "Development team requires training on Azure OpenAI SDK and prompt engineering"]
+- [Impact 2 - e.g., "CI/CD pipeline must incorporate AI model versioning and testing"]
+- [Impact 3 - e.g., "New monitoring for token usage and API costs required"]
+
+**IT Operations**:
+- [Impact 1 - e.g., "24/7 monitoring of Azure OpenAI endpoint availability"]
+- [Impact 2 - e.g., "Incident response procedures updated for AI-related issues"]
+- [Impact 3 - e.g., "Capacity planning for concurrent API calls and throttling limits"]
+
+**Business Operations**:
+- [Impact 1 - e.g., "Customer service agents require 2-week training on copilot usage"]
+- [Impact 2 - e.g., "Knowledge base management becomes critical operational process"]
+- [Impact 3 - e.g., "New KPIs for AI-assisted case resolution tracking"]
+
+**Cost Impacts**:
+- **Initial Investment**: $[Amount] - [Breakdown]
+- **Recurring Annual Cost**: $[Amount] - [Breakdown: licenses, consumption, support]
+- **Cost Savings**: $[Amount] - [From efficiency gains, reduced errors, etc.]
+- **Net Impact**: [Positive/Negative] $[Amount] over [timeframe]
+
+**Skills/Training Requirements**:
+- [Skill 1 required]: [Training plan]
+- [Skill 2 required]: [Training plan]
+- [Estimated training investment]: [Time and cost]
+
+**Vendor/License Changes**:
+- [New vendors/licenses required]
+- [Existing vendors/licenses no longer needed]
+- [Changed dependencies]
+
+### Related Decisions
+
+- **MS-XX-XX-XX-XXX**: [Related ADR title] - [How it relates]
+- **MS-YY-YY-YY-YYY**: [Related ADR title] - [How it relates]
+
+### Success Criteria
+
+[How we'll measure if this decision was successful]
+
+**Technical Success Criteria** (3 months):
+- [ ] System availability ≥ 99.9%
+- [ ] API response time < 2 seconds (95th percentile)
+- [ ] AI response accuracy > 85% (validated against test set)
+
+**Business Success Criteria** (6 months):
+- [ ] User adoption ≥ 80% of customer service agents
+- [ ] Average handle time reduced by 25%
+- [ ] Customer satisfaction (CSAT) score increased by 10%
+- [ ] First contact resolution rate improved by 15%
+
+**Cost Success Criteria** (12 months):
+- [ ] ROI positive (benefits exceed costs)
+- [ ] Azure OpenAI consumption within budget ($XXX/month)
+- [ ] Total cost of operation < projected $XXX annually
 
 ---
 
 ## References
 
-- [Link to documentation]
+**Documentation**:
+- [Link to technical specifications]
 - [Link to proof of concept results]
-- [Link to vendor evaluation]
-- [Link to architectural diagrams - use Mermaid]
+- [Link to vendor documentation]
+
+**Architecture Diagrams**:
+- [Link to Mermaid diagram or use inline diagram below]
+
+```mermaid
+[Insert relevant architecture diagram using Mermaid]
+```
+
+**Related Resources**:
+- [Microsoft documentation references]
+- [Internal wiki or knowledge base links]
+- [Vendor evaluation scorecards]
 
 ---
 
@@ -183,9 +318,20 @@ An ADR is a document that captures a significant architectural decision along wi
 | Role | Name | Signature | Date |
 |------|------|-----------|------|
 | Solution Architect | | | |
-| Technical Lead | | | |
-| Security Architect | | | |
 | Enterprise Architect | | | |
+| Security Architect | | | |
+| Technical Lead | | | |
+| Product Owner | | | |
+| Approving Authority (CIO/CTO) | | | |
+
+---
+
+## Revision History
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | YYYY-MM-DD | [Name] | Initial version |
+| | | | |
 
 ---
 
@@ -222,22 +368,54 @@ Create an ADR for decisions that:
 
 ### ADR Numbering and Versioning
 
-**Numbering Convention**:
-- Use sequential numbers: ADR-001, ADR-002, ADR-003, etc.
-- Zero-pad for sorting: ADR-001 (not ADR-1)
+**Reference Number Convention**:
+
+**Format**: `MS-[TECH]-[PLATFORM]-[PROJECT]-XXX`
+
+**Components Explained**:
+- **MS**: Microsoft (constant prefix for all ADRs)
+- **[TECH]**: Technology domain abbreviation
+  - AI: Artificial Intelligence / Copilot solutions
+  - DATA: Data platform / analytics / databases
+  - INT: Integration / middleware / APIs
+  - SEC: Security / identity / compliance
+  - INFRA: Infrastructure / networking / compute
+  - APP: Application / custom development
+- **[PLATFORM]**: Microsoft platform abbreviation
+  - PP: Power Platform
+  - AZURE: Microsoft Azure
+  - D365: Dynamics 365
+  - M365: Microsoft 365
+  - ENTRA: Entra ID (Azure AD)
+  - FABRIC: Microsoft Fabric
+- **[PROJECT]**: Project name in uppercase, no spaces
+  - Examples: CALLCENTER, CRM, ANALYTICS, PORTAL, INTRANET
+- **XXX**: Three-digit sequential number (001, 002, etc.)
+
+**Numbering Rules**:
+- Use three-digit zero-padding: 001, 002, 010, 100
+- Numbers are sequential within a project
 - Never reuse numbers, even if an ADR is superseded
+- Each project maintains its own sequence
+
+**Examples**:
+- `MS-AI-PP-CALLCENTER-001`: First AI decision for Power Platform call center project
+- `MS-AI-PP-CALLCENTER-002`: Second AI decision for same project
+- `MS-DATA-AZURE-ANALYTICS-001`: First data decision for Azure analytics project
+- `MS-SEC-ENTRA-ENTERPRISE-001`: First security decision for enterprise-wide Entra deployment
 
 **Status Lifecycle**:
 1. **Proposed**: Under discussion, not yet decided
 2. **Accepted**: Decision made and approved
 3. **Deprecated**: No longer applicable but not replaced
-4. **Superseded by ADR-XXX**: Replaced by a newer decision
+4. **Superseded by MS-XX-XX-XX-XXX**: Replaced by a newer decision
 
 **Versioning**:
 - ADRs are immutable once accepted
 - Do not edit accepted ADRs
 - If the decision changes, create a new ADR that supersedes the old one
-- Update the old ADR status to "Superseded by ADR-XXX"
+- Update the old ADR status to "Superseded by MS-XX-XX-XX-XXX"
+- Use revision history table for tracking changes during "Proposed" status
 
 ### Storage and Organization
 
@@ -246,19 +424,36 @@ Create an ADR for decisions that:
 1. **In Source Control** (Preferred):
    ```
    /docs/architecture/decisions/
-   ├── ADR-001-azure-as-cloud-platform.md
-   ├── ADR-002-dataverse-as-data-platform.md
-   ├── ADR-003-domain-driven-design-adoption.md
+   ├── MS-INFRA-AZURE-ENTERPRISE-001-azure-as-cloud-platform.md
+   ├── MS-DATA-AZURE-ENTERPRISE-001-dataverse-as-data-platform.md
+   ├── MS-APP-AZURE-ENTERPRISE-001-domain-driven-design-adoption.md
+   ├── MS-AI-PP-CALLCENTER-001-azure-openai-for-copilot.md
    └── README.md (index of all ADRs)
    ```
 
-2. **In SharePoint/Confluence**: For non-technical stakeholder access
+2. **Organized by Project** (Alternative):
+   ```
+   /docs/architecture/decisions/
+   ├── CALLCENTER/
+   │   ├── MS-AI-PP-CALLCENTER-001-azure-openai-adoption.md
+   │   ├── MS-INT-PP-CALLCENTER-001-dataverse-integration.md
+   │   └── MS-SEC-PP-CALLCENTER-001-rbac-security-model.md
+   ├── ANALYTICS/
+   │   ├── MS-DATA-AZURE-ANALYTICS-001-synapse-analytics-platform.md
+   │   └── MS-INT-AZURE-ANALYTICS-001-api-management.md
+   └── README.md
+   ```
 
-3. **Both**: Store in Git, publish to SharePoint for visibility
+3. **In SharePoint/Confluence**: For non-technical stakeholder access
+
+4. **Both**: Store in Git, publish to SharePoint for visibility
 
 **File Naming**:
-- `ADR-[NUMBER]-[short-title-kebab-case].md`
-- Example: `ADR-015-azure-openai-for-copilot.md`
+- `MS-[TECH]-[PLATFORM]-[PROJECT]-XXX-[short-title-kebab-case].md`
+- Examples:
+  - `MS-AI-PP-CALLCENTER-001-azure-openai-adoption.md`
+  - `MS-DATA-AZURE-ANALYTICS-001-synapse-platform-selection.md`
+  - `MS-SEC-ENTRA-ENTERPRISE-001-zero-trust-architecture.md`
 
 **Format**:
 - Markdown (preferred) for version control
@@ -312,9 +507,9 @@ Create an ADR for decisions that:
 ### 1. Platform Selection Decisions
 
 **Examples**:
-- ADR-001: Adopt Microsoft Azure as Cloud Platform
-- ADR-015: Use Dataverse as Enterprise Data Platform
-- ADR-027: Adopt Power Platform for Citizen Development
+- MS-INFRA-AZURE-ENTERPRISE-001: Adopt Microsoft Azure as Cloud Platform
+- MS-DATA-AZURE-ENTERPRISE-001: Use Dataverse as Enterprise Data Platform
+- MS-APP-PP-ENTERPRISE-001: Adopt Power Platform for Citizen Development
 
 **Key Considerations**:
 - Vendor evaluation criteria
@@ -326,9 +521,9 @@ Create an ADR for decisions that:
 ### 2. Integration Pattern Choices
 
 **Examples**:
-- ADR-008: Use Azure Service Bus for Asynchronous Integration
-- ADR-012: Adopt API Management for External APIs
-- ADR-019: Implement Event-Driven Architecture with Event Grid
+- MS-INT-AZURE-CRM-001: Use Azure Service Bus for Asynchronous Integration
+- MS-INT-AZURE-ENTERPRISE-001: Adopt API Management for External APIs
+- MS-INT-AZURE-PORTAL-001: Implement Event-Driven Architecture with Event Grid
 
 **Key Considerations**:
 - Synchronous vs. asynchronous
@@ -340,9 +535,9 @@ Create an ADR for decisions that:
 ### 3. Security Control Implementations
 
 **Examples**:
-- ADR-005: Implement Zero Trust Architecture
-- ADR-011: Adopt Azure AD B2C for Customer Identity
-- ADR-023: Use Managed Identities for Service Authentication
+- MS-SEC-ENTRA-ENTERPRISE-001: Implement Zero Trust Architecture
+- MS-SEC-ENTRA-PORTAL-001: Adopt Azure AD B2C for Customer Identity
+- MS-SEC-AZURE-ANALYTICS-001: Use Managed Identities for Service Authentication
 
 **Key Considerations**:
 - Compliance requirements (GDPR, HIPAA, SOX)
@@ -354,9 +549,9 @@ Create an ADR for decisions that:
 ### 4. Performance Optimization Tradeoffs
 
 **Examples**:
-- ADR-007: Implement CQRS Pattern for Read Scalability
-- ADR-014: Use Redis Cache for Session State
-- ADR-021: Adopt CDN for Static Content Delivery
+- MS-APP-AZURE-CRM-001: Implement CQRS Pattern for Read Scalability
+- MS-INFRA-AZURE-PORTAL-001: Use Redis Cache for Session State
+- MS-INFRA-AZURE-ENTERPRISE-001: Adopt CDN for Static Content Delivery
 
 **Key Considerations**:
 - Performance targets (latency, throughput)
@@ -368,9 +563,9 @@ Create an ADR for decisions that:
 ### 5. Cost Optimization Decisions
 
 **Examples**:
-- ADR-009: Use Azure Reserved Instances for Predictable Workloads
-- ADR-018: Implement Auto-Scaling for Non-Production Environments
-- ADR-025: Adopt FinOps Practices for Cost Management
+- MS-INFRA-AZURE-ENTERPRISE-001: Use Azure Reserved Instances for Predictable Workloads
+- MS-INFRA-AZURE-ENTERPRISE-002: Implement Auto-Scaling for Non-Production Environments
+- MS-INFRA-AZURE-ENTERPRISE-003: Adopt FinOps Practices for Cost Management
 
 **Key Considerations**:
 - Budget constraints
@@ -427,21 +622,27 @@ flowchart LR
 **Git Workflow**:
 ```bash
 # Create feature branch for ADR
-git checkout -b adr/015-azure-openai-adoption
+git checkout -b adr/ms-ai-pp-callcenter-001
 
-# Create ADR file
-# docs/architecture/decisions/ADR-015-azure-openai-adoption.md
+# Create ADR file using the structured reference number
+# File: docs/architecture/decisions/MS-AI-PP-CALLCENTER-001-azure-openai-adoption.md
 
-# Commit with descriptive message
-git add docs/architecture/decisions/ADR-015-azure-openai-adoption.md
-git commit -m "docs: Add ADR-015 for Azure OpenAI adoption decision"
+# Commit with descriptive message including ADR reference number
+git add docs/architecture/decisions/MS-AI-PP-CALLCENTER-001-azure-openai-adoption.md
+git commit -m "docs: Add MS-AI-PP-CALLCENTER-001 for Azure OpenAI adoption decision"
 
 # Push and create PR for review
-git push origin adr/015-azure-openai-adoption
+git push origin adr/ms-ai-pp-callcenter-001
 
 # After approval, merge to main
-# ADR status changed to "Accepted"
+# ADR status changed from "Proposed" to "Accepted"
+# Update revision history in the ADR document
 ```
+
+**Branch Naming Convention**:
+- Use lowercase for branch names: `adr/ms-ai-pp-callcenter-001`
+- Format: `adr/[full-adr-ref-lowercase]`
+- Keep consistent with ADR reference number for easy tracking
 
 ---
 
