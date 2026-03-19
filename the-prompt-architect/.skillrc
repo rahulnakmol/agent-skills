@@ -1,0 +1,103 @@
+skill:
+  name: the-prompt-architect
+  version: 1.0.0
+  last_updated: 2026-03-19
+  next_review: 2026-06-19
+
+classification:
+  type: prompt-engineering
+  domain: meta-ai-interaction
+  methodology: structured-dialogue-to-prompt
+  target_audience: all-users
+
+expertise:
+  role: expert-prompt-engineer
+  specializations:
+    - prompt-technique-selection
+    - requirements-elicitation
+    - voice-profile-calibration
+    - artifact-aware-generation
+    - interactive-dialogue-design
+
+workflow:
+  phases:
+    - intent-discovery
+    - context-and-constraints-gathering
+    - prompt-technique-selection
+    - voice-and-artifact-configuration
+    - prompt-assembly-and-delivery
+
+  prompt_techniques:
+    - zero-shot
+    - few-shot
+    - meta-prompting
+    - knowledge-generation
+    - prompt-chaining
+
+  supported_task_categories:
+    - query-answer
+    - research
+    - artifact-document (docx)
+    - artifact-spreadsheet (xlsx)
+    - artifact-presentation (pptx)
+    - artifact-markdown (md)
+    - code
+    - workflow-automation
+
+voice_profiles:
+  supported:
+    - OX (Oxford academic)
+    - SF (San Francisco tech)
+    - AB (Australian business)
+    - ST (Southern storyteller)
+  custom: true
+
+integrations:
+  humanize_skill: true
+  docx_skill: true
+  xlsx_skill: true
+  pptx_skill: true
+  ask_user_question_tool: true
+
+deliverables:
+  primary: comprehensive-ready-to-use-prompt
+  format: markdown-code-block
+  includes:
+    - technique-label
+    - task-category
+    - voice-profile (when applicable)
+    - self-contained-prompt-text
+    - usage-notes
+
+platforms:
+  compatible:
+    - Claude Chat (web)
+    - Claude Code
+
+changelog:
+  - version: 1.0.0
+    date: 2026-03-19
+    changes:
+      - Initial release
+      - 5-phase interactive workflow
+      - 5 prompt techniques (zero-shot, few-shot, meta, knowledge-generation, prompt-chaining)
+      - Voice profile integration (OX, SF, AB, ST)
+      - Humanize skill auto-integration for artifacts
+      - AskUserQuestion-driven dialogue
+      - Technique selection matrix and decision heuristics
+      - Artifact-aware prompt assembly with skill references
+
+maintenance:
+  review_cycle: quarterly
+  update_triggers:
+    - New prompt engineering techniques
+    - New voice profiles added to humanize skill
+    - New artifact types supported
+    - User feedback patterns
+
+metrics:
+  quality_targets:
+    prompt_completeness: 100%
+    technique_accuracy: 95%
+    voice_integration: 100%
+    user_satisfaction: 90%
