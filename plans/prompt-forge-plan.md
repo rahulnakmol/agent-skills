@@ -1,4 +1,4 @@
-# The Prompt Architect - Skill Generation Plan
+# Prompt Forge - Skill Generation Plan
 
 ## Project Overview
 
@@ -23,11 +23,11 @@
 
 ```
 root/
-├── the-prompt-architect/
+├── prompt-forge/
 │   ├── SKILL.md (main entry point - skill instructions)
 │   └── .skillrc (metadata and configuration)
 └── plans/
-    └── the-prompt-architect-plan.md (this file)
+    └── prompt-forge-plan.md (this file)
 ```
 
 ---
@@ -39,8 +39,8 @@ root/
 **After completing EACH task**, commit changes:
 
 ```bash
-git add the-prompt-architect/
-git commit -m "feat(the-prompt-architect): Task [NUMBER] - [BRIEF_DESCRIPTION]"
+git add prompt-forge/
+git commit -m "feat(prompt-forge): Task [NUMBER] - [BRIEF_DESCRIPTION]"
 ```
 
 ---
@@ -57,16 +57,16 @@ git commit -m "feat(the-prompt-architect): Task [NUMBER] - [BRIEF_DESCRIPTION]"
 **Objective**: Create the skill directory.
 
 **Actions**:
-1. Create `the-prompt-architect/` directory in repository root
+1. Create `prompt-forge/` directory in repository root
 
 **Git Commit**:
 ```bash
-git add the-prompt-architect/
-git commit -m "feat(the-prompt-architect): Task 1 - Create directory structure"
+git add prompt-forge/
+git commit -m "feat(prompt-forge): Task 1 - Create directory structure"
 ```
 
 **Validation**:
-- [ ] Directory `the-prompt-architect/` exists
+- [ ] Directory `prompt-forge/` exists
 - [ ] Directory is in repository root
 
 ---
@@ -94,13 +94,13 @@ git commit -m "feat(the-prompt-architect): Task 1 - Create directory structure"
 
 **Git Commit**:
 ```bash
-git add the-prompt-architect/SKILL.md
-git commit -m "feat(the-prompt-architect): Task 2 - Create SKILL.md with full skill instructions"
+git add prompt-forge/SKILL.md
+git commit -m "feat(prompt-forge): Task 2 - Create SKILL.md with full skill instructions"
 ```
 
 **Validation**:
 - [ ] SKILL.md has valid YAML frontmatter
-- [ ] `name` field matches directory name: `the-prompt-architect`
+- [ ] `name` field matches directory name: `prompt-forge`
 - [ ] Description is clear and actionable
 - [ ] All 5 prompt techniques documented
 - [ ] Voice profile integration included
@@ -119,8 +119,8 @@ git commit -m "feat(the-prompt-architect): Task 2 - Create SKILL.md with full sk
 
 **Git Commit**:
 ```bash
-git add the-prompt-architect/.skillrc
-git commit -m "feat(the-prompt-architect): Task 3 - Add .skillrc metadata"
+git add prompt-forge/.skillrc
+git commit -m "feat(prompt-forge): Task 3 - Add .skillrc metadata"
 ```
 
 **Validation**:
@@ -161,8 +161,8 @@ git commit -m "feat(the-prompt-architect): Task 3 - Add .skillrc metadata"
 
 **Git Commit**:
 ```bash
-git add plans/the-prompt-architect-plan.md
-git commit -m "docs(the-prompt-architect): Task 5 - Mark plan as completed"
+git add plans/prompt-forge-plan.md
+git commit -m "docs(prompt-forge): Task 5 - Mark plan as completed"
 ```
 
 ---
@@ -181,7 +181,7 @@ git commit -m "docs(the-prompt-architect): Task 5 - Mark plan as completed"
 
 ## Success Criteria
 
-1. Directory `the-prompt-architect/` exists
+1. Directory `prompt-forge/` exists
 2. SKILL.md is valid with proper frontmatter
 3. Interactive 5-phase workflow is complete
 4. All 5 prompt techniques supported (Zero-shot, Few-shot, Meta, Knowledge generation, Prompt chaining)

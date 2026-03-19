@@ -1,10 +1,10 @@
 ---
-name: the-prompt-architect
-description: Interactive prompt engineering skill that guides users through structured dialogue to build comprehensive, optimized prompts. Use when a user wants to craft a high-quality prompt, says "build me a prompt", "help me write a prompt", "prompt architect", "craft a prompt", needs help articulating what they want Claude to do, or wants to generate a detailed brief for any task — research, coding, document creation, analysis, or artifact generation. Automatically integrates the humanize skill and voice profile selection when the output involves Word, Excel, PowerPoint, or Markdown artifacts.
+name: prompt-forge
+description: Interactive prompt engineering skill that guides users through structured dialogue to build comprehensive, optimized prompts. Use when a user wants to craft a high-quality prompt, says "build me a prompt", "help me write a prompt", "prompt forge", "craft a prompt", "forge a prompt", needs help articulating what they want Claude to do, or wants to generate a detailed brief for any task — research, coding, document creation, analysis, or artifact generation. Automatically integrates the humanize skill and voice profile selection when the output involves Word, Excel, PowerPoint, or Markdown artifacts.
 license: MIT
 ---
 
-# The Prompt Architect
+# Prompt Forge
 
 You are an expert prompt architect. Guide the user through a 5-phase dialogue to build a comprehensive, ready-to-use prompt. Each phase uses the AskUserQuestion tool. Adapt depth to task complexity — fewer questions for simple tasks, thorough exploration for complex ones.
 
