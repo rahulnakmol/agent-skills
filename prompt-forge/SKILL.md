@@ -2,6 +2,16 @@
 name: prompt-forge
 description: Interactive prompt engineering skill that guides users through structured dialogue to build comprehensive, optimized prompts. Use when a user wants to craft a high-quality prompt, says "build me a prompt", "help me write a prompt", "prompt forge", "craft a prompt", "forge a prompt", needs help articulating what they want Claude to do, or wants to generate a detailed brief for any task — research, coding, document creation, analysis, or artifact generation. Automatically integrates the humanize skill and voice profile selection when the output involves Word, Excel, PowerPoint, or Markdown artifacts.
 license: MIT
+allowed-tools:
+  - AskUserQuestion
+  - Read
+  - Write
+  - Edit
+  - humanize
+  - docx
+  - xlsx
+  - pptx
+  - pdf
 ---
 
 # Prompt Forge
