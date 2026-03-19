@@ -23,7 +23,7 @@ Classify the response into a task category:
 | Category | Artifact? | Triggers Voice/Humanize? |
 |----------|-----------|--------------------------|
 | Query/Answer | No | No |
-| Research | Maybe (MD) | If MD output |
+| Research | No by default | Only if user wants MD/DOCX output |
 | Artifact: Document | Yes (DOCX/MD) | Yes |
 | Artifact: Spreadsheet | Yes (XLSX) | Yes |
 | Artifact: Presentation | Yes (PPTX) | Yes |
@@ -31,7 +31,16 @@ Classify the response into a task category:
 | Code | No | No |
 | Workflow/Automation | No | No |
 
-Ask a contextual follow-up to sharpen the intent.
+Ask a contextual follow-up to sharpen the intent. Tailor by category:
+- **Research**: "Should this produce a written deliverable (Markdown report, Word doc) or just a conversational answer? That'll determine how I structure the prompt."
+- **Query/Answer**: "Is there a specific angle or sub-question you care about most?"
+- **Artifact: Document/Markdown**: "Do you have a rough outline in mind, or should the prompt define the structure?"
+- **Artifact: Spreadsheet**: "What's the primary use — analysis, tracking, reporting, or a template for ongoing data entry?"
+- **Artifact: Presentation**: "What's the setting — board meeting, conference, team all-hands, client pitch?"
+- **Code**: "Is this greenfield or are you modifying something existing?"
+- **Workflow/Automation**: "What triggers this workflow and what's the end output?"
+
+**If Research produces an artifact** (user says they want a Markdown report, Word doc, etc.), reclassify as the appropriate artifact category and proceed with voice/humanize in Phase 4.
 
 ### Phase 2: Context & Constraints
 
@@ -62,7 +71,7 @@ Explain your choice:
 
 ### Phase 4: Voice & Artifact Configuration
 
-**Only activates for artifact categories.** Skip for Query/Answer, Code, and Workflow tasks.
+**Only activates for artifact categories** (Document, Spreadsheet, Presentation, Markdown, or Research reclassified as artifact). **Skip** for Query/Answer, Code, Workflow, and Research-without-artifact.
 
 Ask via AskUserQuestion:
 > "Which voice profile would you like?
@@ -84,6 +93,15 @@ Load [references/ASSEMBLY-RULES.md](references/ASSEMBLY-RULES.md) for the full 7
 
 Present the prompt, then ask:
 > "Would you like me to: (1) Execute it now, (2) Refine it, or (3) Save it as a file?"
+
+## Adaptive Depth
+
+Scale the number of questions to task complexity:
+- **Light** (3-4 questions total): Query/Answer, simple Code tasks, straightforward Research → use Phase 1 + minimal Phase 2 + Phase 3 auto-select + Phase 5
+- **Standard** (5-7 questions): Single artifact, moderate Code, focused Research → full 5-phase flow
+- **Deep** (8-12 questions): Multi-artifact, ambiguous scope, complex Code with architecture implications, enterprise documents → thorough Phase 2 + technique discussion + voice calibration
+
+**Heuristic**: If the user's initial description is under 2 sentences and the task category is clear, go Light. If they describe multiple deliverables, competing requirements, or say "it's complicated," go Deep. Default to Standard.
 
 ## Tone
 

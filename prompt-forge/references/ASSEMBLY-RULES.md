@@ -105,6 +105,6 @@ After presenting the prompt, ask:
 > What would you prefer?"
 
 Handle each option:
-- **Execute**: Run the prompt in the current session
-- **Refine**: Ask what to change, update the relevant phase inputs, reassemble
-- **Save**: Write to a `.md` file in the current working directory
+- **Execute**: Take the generated prompt text and execute it directly in the current session as if the user had typed it. If the prompt references skills (humanize, docx, xlsx, pptx), invoke those skills as part of execution. For Prompt Chaining, execute each step sequentially and show intermediate outputs.
+- **Refine**: Ask what to change via AskUserQuestion, update the relevant phase inputs, reassemble the prompt, and present the updated version. Repeat until the user is satisfied.
+- **Save**: Write the prompt (including the output envelope with technique, category, voice profile, and usage notes) to a `.md` file in the current working directory. Suggest a filename like `prompt-forge-[task-summary].md`.

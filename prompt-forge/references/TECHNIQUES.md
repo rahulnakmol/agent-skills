@@ -31,6 +31,8 @@ You are a senior technical writer. Write a 500-word overview of Kubernetes pod a
 **If selecting this technique**, ask:
 > "To get the best results, I'd like to include a few examples in the prompt. Can you share 2-3 examples of what good output looks like for this task? Or should I generate representative examples based on what you've described?"
 
+**If the user asks you to generate examples**: Create 2-3 representative input-output pairs that match the task's domain, format, and complexity. Make them realistic but clearly illustrative — each example should demonstrate a different aspect of the expected output pattern (e.g., one short input, one complex input, one edge case). Present the generated examples to the user for approval before embedding them in the final prompt.
+
 **Prompt pattern**:
 ```
 [Role/Context]
